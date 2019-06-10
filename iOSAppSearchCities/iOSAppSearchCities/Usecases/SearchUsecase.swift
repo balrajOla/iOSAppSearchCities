@@ -13,7 +13,13 @@ protocol SearchUsecaseProtocol {
 }
 
 struct SearchUsecase: SearchUsecaseProtocol {
+    let service: ServiceType
+   
+    init(service: ServiceType) {
+        self.service = service
+    }
+    
     func search(byKeyword keyword: String) -> Future<Cities> {
-        return Future<Cities>()
+        return self.service.searchCities(for: keyword)
     }
 }

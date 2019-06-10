@@ -14,15 +14,38 @@ enum ServiceError: Error {
 }
 
 protocol ServiceType {
-    func searchCities(for keyword: String) -> Future<CityData>?
+    func searchCities(for keyword: String) -> Future<Cities>
     func save(forKey key: String) -> (_ data: [CityData]) -> Future<Bool>
     func get(forKey key: String) -> Future<[CityData]>
     func getAllCities() -> Future<[CityData]>
 }
 
 struct Service: ServiceType {
-    func searchCities(for keyword: String) -> Future<CityData>? {
-        return nil
+    let indexes: Indexes
+    
+    init(indexes: Indexes = Indexes(for: FACache.citiesIndexesKey)) {
+        self.indexes = indexes
+    }
+    
+    func searchCities(for keyword: String) -> Future<Cities> {
+        let searchKeyPath = keyword.keyPath()
+        return self.indexes.get(forKeyPath: searchKeyPath)  // find indexes
+            .bind { values -> Future<Cities> in
+                //get all files
+                let totalIndexesCount = values.count
+                
+                return whenAll(values.map { fileName -> Future<[CityData]> in
+                    self.get(forKey: fileName)
+                }).fmap { $0.reduce([], +) }
+                    .fmap { Cities(cities: $0) }
+                    .fmap {
+                        if totalIndexesCount > 0 {
+                            return $0
+                        } else {
+                            return Cities(cityInfo: $0.info.filter { $0.key.starts(with: keyword) })
+                        }
+                }
+        }
     }
     
     func save(forKey key: String)

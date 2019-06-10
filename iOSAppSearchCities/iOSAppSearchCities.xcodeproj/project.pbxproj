@@ -22,6 +22,7 @@
 		A214263E22ADF686006D8FD1 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214263222ADF686006D8FD1 /* AppEnvironment.swift */; };
 		A214263F22ADF686006D8FD1 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214263322ADF686006D8FD1 /* ErrorHandler.swift */; };
 		A214264022ADF686006D8FD1 /* FACache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214263422ADF686006D8FD1 /* FACache.swift */; };
+		A214264222AE2283006D8FD1 /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214264122AE2283006D8FD1 /* StorageHelper.swift */; };
 		A2CB1EBD22AD5173000FAB15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */; };
 		A2CB1EC422AD5176000FAB15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2CB1EC322AD5176000FAB15 /* Assets.xcassets */; };
 		A2CB1ED122AD52EB000FAB15 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB1ECF22AD52EB000FAB15 /* HomeScreenViewController.swift */; };
@@ -48,6 +49,7 @@
 		A214263222ADF686006D8FD1 /* AppEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		A214263322ADF686006D8FD1 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		A214263422ADF686006D8FD1 /* FACache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FACache.swift; sourceTree = "<group>"; };
+		A214264122AE2283006D8FD1 /* StorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
 		A2CB1EB922AD5173000FAB15 /* iOSAppSearchCities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSAppSearchCities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2CB1EC322AD5176000FAB15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				A214262122AD8235006D8FD1 /* Indexes.swift */,
 				A214262322AD885F006D8FD1 /* Dictionary+KeyPath.swift */,
 				A214262522AD8891006D8FD1 /* String+KeyPath.swift */,
+				A214264122AE2283006D8FD1 /* StorageHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				A2CB1ED722AD6EF5000FAB15 /* CitiesDetail.swift in Sources */,
 				A214263B22ADF686006D8FD1 /* ToastMessage.swift in Sources */,
 				A214263522ADF686006D8FD1 /* DateProtocol.swift in Sources */,
+				A214264222AE2283006D8FD1 /* StorageHelper.swift in Sources */,
 				A214263F22ADF686006D8FD1 /* ErrorHandler.swift in Sources */,
 				A214263922ADF686006D8FD1 /* UICollectionView+RegisterCells.swift in Sources */,
 				A214263D22ADF686006D8FD1 /* Operators.swift in Sources */,

@@ -16,6 +16,7 @@ public final class FACache {
   private let cache = NSCache<NSString, AnyObject>()
   
   public static let citiesIndexesKey = "citiesIndexesKey"
+  public static let isIndexingCompleted = "isIndexingCompleted"
   
   public init() {
   }

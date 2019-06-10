@@ -15,6 +15,9 @@ enum ServiceError: Error {
 
 protocol ServiceType {
     func searchCities(for keyword: String) -> Future<CityData>?
+    func save(forKey key: String) -> (_ data: [CityData]) -> Future<Bool>
+    func get(forKey key: String) -> Future<[CityData]>
+    func getAllCities() -> Future<[CityData]>
 }
 
 struct Service: ServiceType {
@@ -49,6 +52,23 @@ struct Service: ServiceType {
             }
             
             result.resolve(with: resultWritten)
+        }
+        
+        return result
+    }
+    
+    func getAllCities() -> Future<[CityData]> {
+        let result = Future<[CityData]>()
+        
+        DispatchQueue.global(qos: .utility).async {
+            guard let citiesDetail = try? (Bundle.main.path(forResource: "cities", ofType: "json")
+                .flatMap { try Data(contentsOf: URL(fileURLWithPath: $0), options: .mappedIfSafe) }
+                .flatMap { try JSONDecoder().decode([CityData].self, from: $0) }) else {
+                    result.reject(with: ServiceError.noDataToRead)
+                    return
+            }
+            
+            result.resolve(with: citiesDetail)
         }
         
         return result

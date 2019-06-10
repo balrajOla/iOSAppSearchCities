@@ -21,11 +21,11 @@ struct Environment {
   /// A type that exposes how to capture dates as measured from # of seconds since 1970.
   public let dateType: DateProtocol.Type
   
-    /// The user's calendar.
+  /// The user's calendar.
   public let calendar: Calendar
     
-    /// Indexing level
-    public let indexingLevel: Int
+  /// Indexing level
+  public let indexingLevel: Int
   
   init(apiService: ServiceType = Service(),
               cache: FACache = FACache(),

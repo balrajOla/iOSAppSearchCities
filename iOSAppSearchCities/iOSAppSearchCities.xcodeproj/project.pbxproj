@@ -23,6 +23,7 @@
 		A214263F22ADF686006D8FD1 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214263322ADF686006D8FD1 /* ErrorHandler.swift */; };
 		A214264022ADF686006D8FD1 /* FACache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214263422ADF686006D8FD1 /* FACache.swift */; };
 		A214264222AE2283006D8FD1 /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214264122AE2283006D8FD1 /* StorageHelper.swift */; };
+		A214264522AE2C20006D8FD1 /* IndexingUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214264422AE2C20006D8FD1 /* IndexingUsecase.swift */; };
 		A2CB1EBD22AD5173000FAB15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */; };
 		A2CB1EC422AD5176000FAB15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2CB1EC322AD5176000FAB15 /* Assets.xcassets */; };
 		A2CB1ED122AD52EB000FAB15 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB1ECF22AD52EB000FAB15 /* HomeScreenViewController.swift */; };
@@ -50,6 +51,7 @@
 		A214263322ADF686006D8FD1 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		A214263422ADF686006D8FD1 /* FACache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FACache.swift; sourceTree = "<group>"; };
 		A214264122AE2283006D8FD1 /* StorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
+		A214264422AE2C20006D8FD1 /* IndexingUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexingUsecase.swift; sourceTree = "<group>"; };
 		A2CB1EB922AD5173000FAB15 /* iOSAppSearchCities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSAppSearchCities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2CB1EC322AD5176000FAB15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A214264322AE26C1006D8FD1 /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+				A214264422AE2C20006D8FD1 /* IndexingUsecase.swift */,
+			);
+			path = Usecases;
+			sourceTree = "<group>";
+		};
 		A2CB1EB022AD5172000FAB15 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +102,7 @@
 		A2CB1EBB22AD5173000FAB15 /* iOSAppSearchCities */ = {
 			isa = PBXGroup;
 			children = (
+				A214264322AE26C1006D8FD1 /* Usecases */,
 				A214262722ADEF6D006D8FD1 /* cities.json */,
 				A2CB1ED422AD6E9E000FAB15 /* Models */,
 				A2CB1ED322AD5395000FAB15 /* Utilities */,
@@ -261,6 +272,7 @@
 				A214263F22ADF686006D8FD1 /* ErrorHandler.swift in Sources */,
 				A214263922ADF686006D8FD1 /* UICollectionView+RegisterCells.swift in Sources */,
 				A214263D22ADF686006D8FD1 /* Operators.swift in Sources */,
+				A214264522AE2C20006D8FD1 /* IndexingUsecase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

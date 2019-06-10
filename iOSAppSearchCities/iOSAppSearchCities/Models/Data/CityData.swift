@@ -20,6 +20,14 @@ struct CityData: Codable {
         case id = "_id"
         case coord
     }
+    
+    func getKeyPath() -> KeyPath {
+        return "\(name)_\(country)".keyPath()
+    }
+    
+    func getFileName() -> String {
+        return getKeyPath().segments.last ?? country
+    }
 }
 
 struct Coord: Codable {

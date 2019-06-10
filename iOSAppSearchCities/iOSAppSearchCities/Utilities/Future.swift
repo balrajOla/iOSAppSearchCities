@@ -90,3 +90,36 @@ extension Future {
         }
     }
 }
+
+
+func whenAll<T>(_ futures: [Future<T>]) -> Future<[T]> {
+    let futureResponse = Future<[T]>()
+    var successRes: [T] = [T]()
+    var failRes: Error?
+    let dispatchGroup = DispatchGroup()
+    
+    futures.forEach {
+        dispatchGroup.enter()
+        
+        $0.observe(with: { response in
+            switch response {
+            case .success(let val):
+                successRes.append(val)
+            case .failure(let error):
+                failRes = error
+            }
+            dispatchGroup.leave()
+        })
+    }
+    
+    dispatchGroup.notify(queue: .global(qos: .utility)) {
+        if let err = failRes {
+            futureResponse.reject(with: err)
+        } else {
+            futureResponse.resolve(with: successRes)
+        }
+    }
+    
+    return futureResponse
+}
+

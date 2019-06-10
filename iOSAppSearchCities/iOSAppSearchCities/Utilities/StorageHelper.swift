@@ -8,7 +8,7 @@
 
 import Foundation
 
-class StorageHelper{
+class StorageHelper {
     
     //MARK: - Variables
     enum StorageHelperError:Error{
@@ -23,7 +23,7 @@ class StorageHelper{
         case caches
     }
     
-    
+    private static let cache = LRUCache<String>(100)
     
     //MARK: - Functions
     /** Store an encodable struct to the specified directory on disk
@@ -32,6 +32,8 @@ class StorageHelper{
      *  @param fileName    What to name the file where the struct data will be stored
      **/
     static func store<T: Encodable>(_ object: T, to directory: Directory, as fileName: String) throws {
+        
+        cache.set(fileName, val: object)
         
         let url = getURL(for: directory).appendingPathComponent(fileName, isDirectory: false)
         
@@ -56,6 +58,10 @@ class StorageHelper{
      *  @return decoded    Object model(s) of data
      **/
     static func retrieve<T: Decodable>(_ fileName: String, from directory: Directory, as type: T.Type) throws -> T{
+        if let value = cache.get(fileName) as? T {
+            return value
+        }
+        
         let url = getURL(for: directory).appendingPathComponent(fileName, isDirectory: false)
         
         if !FileManager.default.fileExists(atPath: url.path) {
@@ -66,6 +72,7 @@ class StorageHelper{
             let decoder = JSONDecoder()
             do {
                 let model = try decoder.decode(type, from: data)
+                cache.set(fileName, val: model)
                 return model
             } catch {
                 throw(error)

@@ -28,7 +28,7 @@ struct IndexingUsecase {
             return Future<Bool>(value: true)
         }
         
-        var response = Future<Bool>()
+        let response = Future<Bool>()
         
         serialQueue.async {
             self.service.getAllCities()
@@ -36,31 +36,24 @@ struct IndexingUsecase {
                 return whenAll(cities.map { citiesData -> Future<Bool> in
                     let indexPath = citiesData.getKeyPath()
                     
-                    print("Indexing Path: \(indexPath.path)")
-                    
                     return self.indexes.get(forKeyPath: indexPath)
                         .bind { names -> Future<Bool> in
                             guard let fileIndex = names.first else {
                                 let fileName = citiesData.getFileName()
-                                print("First Time Saving Path: \(indexPath.path) Value: \([citiesData])")
                                 return self.service.save(forKey: fileName)([citiesData])
                                     .bind { _ in
-                                         print("First Time Saving Index: \(indexPath.path)")
                                          return self.indexes.save(forKeyPath: indexPath, value: fileName) }
                             }
                             
-                            print("Repeat Saving Path: \(indexPath.path)")
                             return self.service.get(forKey: fileIndex)
                                 .bind {
                                     var citiesValue = $0
                                     citiesValue.append(citiesData)
-                                    print("Updated Data for Saving Path: \(indexPath.path) Value: \(citiesValue)")
                                     return self.service.save(forKey: fileIndex)(citiesValue)
                             }
                     }
                 })
             }.fmap { value -> Bool in
-                print("All Value Saved")
                 AppEnvironment.current.cache[FACache.isIndexingCompleted] = true
                 return value.reduce(true, { $0 && $1 })
             }.observe {

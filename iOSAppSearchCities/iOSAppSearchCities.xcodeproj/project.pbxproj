@@ -24,6 +24,9 @@
 		A214264022ADF686006D8FD1 /* FACache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214263422ADF686006D8FD1 /* FACache.swift */; };
 		A214264222AE2283006D8FD1 /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214264122AE2283006D8FD1 /* StorageHelper.swift */; };
 		A214264522AE2C20006D8FD1 /* IndexingUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214264422AE2C20006D8FD1 /* IndexingUsecase.swift */; };
+		A277E65522AEA1AC008B0A2D /* SearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */; };
+		A277E65722AEB4F6008B0A2D /* LRUCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277E65622AEB4F6008B0A2D /* LRUCache.swift */; };
+		A277E65922AEB52B008B0A2D /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277E65822AEB52B008B0A2D /* LinkedList.swift */; };
 		A2CB1EBD22AD5173000FAB15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */; };
 		A2CB1EC422AD5176000FAB15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2CB1EC322AD5176000FAB15 /* Assets.xcassets */; };
 		A2CB1ED122AD52EB000FAB15 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB1ECF22AD52EB000FAB15 /* HomeScreenViewController.swift */; };
@@ -52,6 +55,9 @@
 		A214263422ADF686006D8FD1 /* FACache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FACache.swift; sourceTree = "<group>"; };
 		A214264122AE2283006D8FD1 /* StorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
 		A214264422AE2C20006D8FD1 /* IndexingUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexingUsecase.swift; sourceTree = "<group>"; };
+		A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecase.swift; sourceTree = "<group>"; };
+		A277E65622AEB4F6008B0A2D /* LRUCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUCache.swift; sourceTree = "<group>"; };
+		A277E65822AEB52B008B0A2D /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		A2CB1EB922AD5173000FAB15 /* iOSAppSearchCities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSAppSearchCities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2CB1EC322AD5176000FAB15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				A214264422AE2C20006D8FD1 /* IndexingUsecase.swift */,
+				A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -142,6 +149,8 @@
 				A214262322AD885F006D8FD1 /* Dictionary+KeyPath.swift */,
 				A214262522AD8891006D8FD1 /* String+KeyPath.swift */,
 				A214264122AE2283006D8FD1 /* StorageHelper.swift */,
+				A277E65622AEB4F6008B0A2D /* LRUCache.swift */,
+				A277E65822AEB52B008B0A2D /* LinkedList.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -251,7 +260,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A277E65722AEB4F6008B0A2D /* LRUCache.swift in Sources */,
 				A214262222AD8235006D8FD1 /* Indexes.swift in Sources */,
+				A277E65922AEB52B008B0A2D /* LinkedList.swift in Sources */,
 				A2CB1EDF22AD7955000FAB15 /* Future.swift in Sources */,
 				A214263722ADF686006D8FD1 /* Network.swift in Sources */,
 				A214263A22ADF686006D8FD1 /* Environment.swift in Sources */,
@@ -261,6 +272,7 @@
 				A2CB1ED122AD52EB000FAB15 /* HomeScreenViewController.swift in Sources */,
 				A214264022ADF686006D8FD1 /* FACache.swift in Sources */,
 				A214263C22ADF686006D8FD1 /* Loader.swift in Sources */,
+				A277E65522AEA1AC008B0A2D /* SearchUsecase.swift in Sources */,
 				A214262622AD8891006D8FD1 /* String+KeyPath.swift in Sources */,
 				A214263822ADF686006D8FD1 /* PulseAnimation.swift in Sources */,
 				A2CB1EDD22AD76C2000FAB15 /* Service.swift in Sources */,

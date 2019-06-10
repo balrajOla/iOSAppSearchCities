@@ -49,7 +49,7 @@ extension Future {
     }
 
     public func bind<B>(_ m: @escaping (Value) throws -> Future<B>) -> Future<B> {
-        let future = Future<B>()
+        let future1 = Future<B>()
 
         // Observe the current future
         observe { result in
@@ -65,20 +65,20 @@ extension Future {
                     future.observe { result in
                         switch result {
                         case .success(let value):
-                            future.resolve(with: value)
+                            future1.resolve(with: value)
                         case .failure(let error):
-                            future.reject(with: error)
+                            future1.reject(with: error)
                         }
                     }
                 } catch {
-                    future.reject(with: error)
+                    future1.reject(with: error)
                 }
             case .failure(let error):
-                future.reject(with: error)
+                future1.reject(with: error)
             }
         }
 
-        return future
+        return future1
     }
 }
 

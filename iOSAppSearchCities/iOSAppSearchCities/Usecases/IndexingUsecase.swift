@@ -23,13 +23,12 @@ struct IndexingUsecase {
     }
     
     func generateIndexes() -> Future<Bool> {
+        if AppEnvironment.current.cache[FACache.isIndexingCompleted] != nil {
+            return Future<Bool>(value: true)
+        }
+        
         return service.getAllCities()
             .bind { (cities: [CityData]) ->  Future<[Bool]> in
-                if let isIndexingDone = AppEnvironment.current.cache[FACache.isIndexingCompleted] as? Bool,
-                    isIndexingDone {
-                    return Future<[Bool]>(value: [true])
-                }
-                
                 return whenAll(cities.map { citiesData -> Future<Bool> in
                     let indexPath = citiesData.getKeyPath()
                     

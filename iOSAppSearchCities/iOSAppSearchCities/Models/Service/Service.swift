@@ -8,8 +8,12 @@
 
 import Foundation
 
-struct Service {
-    func searchCities(for keyword: String) -> Future<CitiesData>? {
+protocol ServiceType {
+    func searchCities(for keyword: String) -> Future<CityData>?
+}
+
+struct Service: ServiceType {
+    func searchCities(for keyword: String) -> Future<CityData>? {
         return nil
     }
 }

@@ -10,6 +10,18 @@
 		A214262222AD8235006D8FD1 /* Indexes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262122AD8235006D8FD1 /* Indexes.swift */; };
 		A214262422AD885F006D8FD1 /* Dictionary+KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262322AD885F006D8FD1 /* Dictionary+KeyPath.swift */; };
 		A214262622AD8891006D8FD1 /* String+KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262522AD8891006D8FD1 /* String+KeyPath.swift */; };
+		A214262822ADEF6D006D8FD1 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = A214262722ADEF6D006D8FD1 /* cities.json */; };
+		A214263522ADF686006D8FD1 /* DateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262922ADF686006D8FD1 /* DateProtocol.swift */; };
+		A214263722ADF686006D8FD1 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262B22ADF686006D8FD1 /* Network.swift */; };
+		A214263822ADF686006D8FD1 /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262C22ADF686006D8FD1 /* PulseAnimation.swift */; };
+		A214263922ADF686006D8FD1 /* UICollectionView+RegisterCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262D22ADF686006D8FD1 /* UICollectionView+RegisterCells.swift */; };
+		A214263A22ADF686006D8FD1 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262E22ADF686006D8FD1 /* Environment.swift */; };
+		A214263B22ADF686006D8FD1 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262F22ADF686006D8FD1 /* ToastMessage.swift */; };
+		A214263C22ADF686006D8FD1 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214263022ADF686006D8FD1 /* Loader.swift */; };
+		A214263D22ADF686006D8FD1 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214263122ADF686006D8FD1 /* Operators.swift */; };
+		A214263E22ADF686006D8FD1 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214263222ADF686006D8FD1 /* AppEnvironment.swift */; };
+		A214263F22ADF686006D8FD1 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214263322ADF686006D8FD1 /* ErrorHandler.swift */; };
+		A214264022ADF686006D8FD1 /* FACache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214263422ADF686006D8FD1 /* FACache.swift */; };
 		A2CB1EBD22AD5173000FAB15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */; };
 		A2CB1EC422AD5176000FAB15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2CB1EC322AD5176000FAB15 /* Assets.xcassets */; };
 		A2CB1ED122AD52EB000FAB15 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB1ECF22AD52EB000FAB15 /* HomeScreenViewController.swift */; };
@@ -24,6 +36,18 @@
 		A214262122AD8235006D8FD1 /* Indexes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indexes.swift; sourceTree = "<group>"; };
 		A214262322AD885F006D8FD1 /* Dictionary+KeyPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+KeyPath.swift"; sourceTree = "<group>"; };
 		A214262522AD8891006D8FD1 /* String+KeyPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+KeyPath.swift"; sourceTree = "<group>"; };
+		A214262722ADEF6D006D8FD1 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		A214262922ADF686006D8FD1 /* DateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProtocol.swift; sourceTree = "<group>"; };
+		A214262B22ADF686006D8FD1 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		A214262C22ADF686006D8FD1 /* PulseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulseAnimation.swift; sourceTree = "<group>"; };
+		A214262D22ADF686006D8FD1 /* UICollectionView+RegisterCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+RegisterCells.swift"; sourceTree = "<group>"; };
+		A214262E22ADF686006D8FD1 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		A214262F22ADF686006D8FD1 /* ToastMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
+		A214263022ADF686006D8FD1 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		A214263122ADF686006D8FD1 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		A214263222ADF686006D8FD1 /* AppEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		A214263322ADF686006D8FD1 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		A214263422ADF686006D8FD1 /* FACache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FACache.swift; sourceTree = "<group>"; };
 		A2CB1EB922AD5173000FAB15 /* iOSAppSearchCities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSAppSearchCities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2CB1EC322AD5176000FAB15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,8 +90,9 @@
 		A2CB1EBB22AD5173000FAB15 /* iOSAppSearchCities */ = {
 			isa = PBXGroup;
 			children = (
+				A214262722ADEF6D006D8FD1 /* cities.json */,
 				A2CB1ED422AD6E9E000FAB15 /* Models */,
-				A2CB1ED322AD5395000FAB15 /* Libraries */,
+				A2CB1ED322AD5395000FAB15 /* Utilities */,
 				A2CB1ECE22AD52CE000FAB15 /* ViewControllers */,
 				A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */,
 				A2CB1EC322AD5176000FAB15 /* Assets.xcassets */,
@@ -85,15 +110,26 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		A2CB1ED322AD5395000FAB15 /* Libraries */ = {
+		A2CB1ED322AD5395000FAB15 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				A214263222ADF686006D8FD1 /* AppEnvironment.swift */,
+				A214262922ADF686006D8FD1 /* DateProtocol.swift */,
+				A214262E22ADF686006D8FD1 /* Environment.swift */,
+				A214263322ADF686006D8FD1 /* ErrorHandler.swift */,
+				A214263422ADF686006D8FD1 /* FACache.swift */,
+				A214263022ADF686006D8FD1 /* Loader.swift */,
+				A214262B22ADF686006D8FD1 /* Network.swift */,
+				A214263122ADF686006D8FD1 /* Operators.swift */,
+				A214262C22ADF686006D8FD1 /* PulseAnimation.swift */,
+				A214262F22ADF686006D8FD1 /* ToastMessage.swift */,
+				A214262D22ADF686006D8FD1 /* UICollectionView+RegisterCells.swift */,
 				A2CB1EDE22AD7955000FAB15 /* Future.swift */,
 				A214262122AD8235006D8FD1 /* Indexes.swift */,
 				A214262322AD885F006D8FD1 /* Dictionary+KeyPath.swift */,
 				A214262522AD8891006D8FD1 /* String+KeyPath.swift */,
 			);
-			path = Libraries;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		A2CB1ED422AD6E9E000FAB15 /* Models */ = {
@@ -188,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A214262822ADEF6D006D8FD1 /* cities.json in Resources */,
 				A2CB1EC422AD5176000FAB15 /* Assets.xcassets in Resources */,
 				A2CB1ED222AD52EB000FAB15 /* HomeScreenViewController.xib in Resources */,
 			);
@@ -202,13 +239,24 @@
 			files = (
 				A214262222AD8235006D8FD1 /* Indexes.swift in Sources */,
 				A2CB1EDF22AD7955000FAB15 /* Future.swift in Sources */,
+				A214263722ADF686006D8FD1 /* Network.swift in Sources */,
+				A214263A22ADF686006D8FD1 /* Environment.swift in Sources */,
+				A214263E22ADF686006D8FD1 /* AppEnvironment.swift in Sources */,
 				A214262422AD885F006D8FD1 /* Dictionary+KeyPath.swift in Sources */,
 				A2CB1EBD22AD5173000FAB15 /* AppDelegate.swift in Sources */,
 				A2CB1ED122AD52EB000FAB15 /* HomeScreenViewController.swift in Sources */,
+				A214264022ADF686006D8FD1 /* FACache.swift in Sources */,
+				A214263C22ADF686006D8FD1 /* Loader.swift in Sources */,
 				A214262622AD8891006D8FD1 /* String+KeyPath.swift in Sources */,
+				A214263822ADF686006D8FD1 /* PulseAnimation.swift in Sources */,
 				A2CB1EDD22AD76C2000FAB15 /* Service.swift in Sources */,
 				A2CB1EDA22AD7075000FAB15 /* CityData.swift in Sources */,
 				A2CB1ED722AD6EF5000FAB15 /* CitiesDetail.swift in Sources */,
+				A214263B22ADF686006D8FD1 /* ToastMessage.swift in Sources */,
+				A214263522ADF686006D8FD1 /* DateProtocol.swift in Sources */,
+				A214263F22ADF686006D8FD1 /* ErrorHandler.swift in Sources */,
+				A214263922ADF686006D8FD1 /* UICollectionView+RegisterCells.swift in Sources */,
+				A214263D22ADF686006D8FD1 /* Operators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

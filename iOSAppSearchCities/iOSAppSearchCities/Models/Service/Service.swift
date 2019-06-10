@@ -31,9 +31,10 @@ struct Service: ServiceType {
             return { (data: [CityData]) -> Future<Bool> in
                 let result = Future<Bool>()
                 
-                DispatchQueue.global(qos: .utility).async {
+                DispatchQueue.global(qos: .userInitiated).async {
                     do {
-                        try StorageHelper.store(data, to: StorageHelper.Directory.documents, as: "\(key).json")
+                        try StorageHelper.store(data, to: StorageHelper.Directory.caches, as: "\(key).json")
+                        result.resolve(with: true)
                     } catch {
                         result.reject(with: ServiceError.writeDataIssue)
                     }
@@ -45,8 +46,8 @@ struct Service: ServiceType {
     func get(forKey key: String) -> Future<[CityData]> {
         let result = Future<[CityData]>()
         
-        DispatchQueue.global(qos: .utility).async {
-            guard let resultWritten = try? StorageHelper.retrieve("\(key).json", from: StorageHelper.Directory.documents, as: [CityData].self) else {
+        DispatchQueue.global(qos: .userInitiated).async {
+            guard let resultWritten = try? StorageHelper.retrieve("\(key).json", from: StorageHelper.Directory.caches, as: [CityData].self) else {
                 result.reject(with: ServiceError.noDataToRead)
                 return
             }
@@ -60,7 +61,7 @@ struct Service: ServiceType {
     func getAllCities() -> Future<[CityData]> {
         let result = Future<[CityData]>()
         
-        DispatchQueue.global(qos: .utility).async {
+        DispatchQueue.global(qos: .userInitiated).async {
             guard let citiesDetail = try? (Bundle.main.path(forResource: "cities", ofType: "json")
                 .flatMap { try Data(contentsOf: URL(fileURLWithPath: $0), options: .mappedIfSafe) }
                 .flatMap { try JSONDecoder().decode([CityData].self, from: $0) }) else {

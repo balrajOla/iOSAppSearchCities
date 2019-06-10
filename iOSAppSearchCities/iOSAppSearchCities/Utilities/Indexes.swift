@@ -17,7 +17,10 @@ struct Indexes {
     }
     
     func save(forKeyPath keyPath: KeyPath, value: String) -> Future<Bool> {
-        AppEnvironment.current.cache[self.key] = value
+        var valueToUpdate = (AppEnvironment.current.cache[self.key] as? [String : Any]) ?? [String : Any]()
+        valueToUpdate[keyPath: keyPath] = value
+        AppEnvironment.current.cache[self.key] = valueToUpdate
+        
         return Future<Bool>(value: true)
     }
     

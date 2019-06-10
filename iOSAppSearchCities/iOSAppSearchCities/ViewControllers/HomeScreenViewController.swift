@@ -9,11 +9,21 @@
 import UIKit
 
 class HomeScreenViewController: UIViewController {
+    
+    let indexingUC = IndexingUsecase(service: AppEnvironment.current.apiService)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        Loader.show(blockingLoader: false)
+        
+        indexingUC.generateIndexes()
+            .observe { _ in
+                DispatchQueue.main.async {
+                    Loader.hide()
+                }
+        }
     }
 
 

@@ -15,6 +15,7 @@ protocol IndexingUsecaseProtocol {
 struct IndexingUsecase {
     let service: ServiceType
     let indexes: Indexes
+    let serialQueue = DispatchQueue(label: "InsuranceUsecaseQueue")
     
     init(service: ServiceType,
          indexes: Indexes = Indexes(for: FACache.citiesIndexesKey)) {
@@ -27,7 +28,10 @@ struct IndexingUsecase {
             return Future<Bool>(value: true)
         }
         
-        return service.getAllCities()
+        var response = Future<Bool>()
+        
+        serialQueue.async {
+            self.service.getAllCities()
             .bind { (cities: [CityData]) ->  Future<[Bool]> in
                 return whenAll(cities.map { citiesData -> Future<Bool> in
                     let indexPath = citiesData.getKeyPath()
@@ -59,6 +63,16 @@ struct IndexingUsecase {
                 print("All Value Saved")
                 AppEnvironment.current.cache[FACache.isIndexingCompleted] = true
                 return value.reduce(true, { $0 && $1 })
+            }.observe {
+                switch $0 {
+                case .success(let success):
+                    response.resolve(with: success)
+                case .failure(let error):
+                    response.reject(with: error)
+                }
+            }
         }
+        
+        return response
     }
 }

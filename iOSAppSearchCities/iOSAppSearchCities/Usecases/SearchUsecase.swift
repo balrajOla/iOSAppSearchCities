@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+protocol SearchUsecaseProtocol {
+    func search(byKeyword keyword: String) -> Future<Cities>
+}
+
+struct SearchUsecase: SearchUsecaseProtocol {
+    func search(byKeyword keyword: String) -> Future<Cities> {
+        return Future<Cities>()
+    }
+}

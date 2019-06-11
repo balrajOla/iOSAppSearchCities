@@ -30,13 +30,15 @@ struct IndexingUsecase {
         
         let response = Future<Bool>()
         
-        serialQueue.async {
+        DispatchQueue.global(qos: .utility).async {
             self.service.getAllCities()
                 .bind { (cities: [CityData]) ->  Future<[Bool]> in
                     return whenAll(cities.map { citiesData -> Future<Bool> in
                         let indexPath = citiesData.getKeyPath()
+                        let result = Future<Bool>()
                         
-                        return self.indexes.get(forKeyPath: indexPath)
+                        self.serialQueue.async {
+                        self.indexes.get(forKeyPath: indexPath)
                             .bind { names -> Future<Bool> in
                                 guard let fileIndex = names.first else {
                                     let fileName = citiesData.getFileName()
@@ -55,7 +57,17 @@ struct IndexingUsecase {
                                             return Future<Bool>(value: true)
                                         }
                                 }
+                            }.observe {
+                                switch $0 {
+                                case .success(let success):
+                                    response.resolve(with: success)
+                                case .failure(let error):
+                                    response.reject(with: error)
+                                }
+                            }
                         }
+                        
+                        return result
                     })
                 }.fmap { value -> Bool in
                     AppEnvironment.current.cache[FACache.isIndexingCompleted] = true

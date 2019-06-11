@@ -12,8 +12,6 @@ import Foundation
  A collection of **all** global variables and singletons that the app wants access to.
  */
 struct Environment {
-  /// A type that exposes endpoints for fetching iOSAppSearchCities data.
-  public let apiService: ServiceType
   
   /// A type that stored cached data
   public let cache: FACache
@@ -27,12 +25,10 @@ struct Environment {
   /// Indexing level
   public let indexingLevel: Int
   
-  init(apiService: ServiceType = Service(),
-              cache: FACache = FACache(),
+  init(cache: FACache = FACache(),
               dateType: DateProtocol.Type = Date.self,
               calendar: Calendar = .current,
               indexingLevel: Int = 2) {
-    self.apiService = apiService
     self.cache = cache
     self.dateType = dateType
     self.calendar = calendar

@@ -19,7 +19,7 @@ struct IndexingUsecase {
     private var isIndexing: Future<Bool> = Future<Bool>()
     
     
-    public static let sharedInstance = IndexingUsecase(service: AppEnvironment.current.apiService)
+    public static let sharedInstance = IndexingUsecase(service: Service())
     
     private init(service: ServiceType,
          indexes: Indexes = Indexes(for: FACache.citiesIndexesKey)) {

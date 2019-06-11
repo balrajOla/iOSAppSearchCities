@@ -18,6 +18,7 @@ struct IndexingUsecase {
     private let serialQueue = DispatchQueue(label: "InsuranceUsecaseQueue")
     private var isIndexing: Future<Bool> = Future<Bool>()
     
+    
     public static let sharedInstance = IndexingUsecase(service: AppEnvironment.current.apiService)
     
     private init(service: ServiceType,
@@ -69,9 +70,9 @@ struct IndexingUsecase {
                             }.observe {
                                 switch $0 {
                                 case .success(let success):
-                                    response.resolve(with: success)
+                                    result.resolve(with: success)
                                 case .failure(let error):
-                                    response.reject(with: error)
+                                    result.reject(with: error)
                                 }
                             }
                         }

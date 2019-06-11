@@ -9,13 +9,20 @@
 import UIKit
 
 class HomeScreenViewController: UIViewController {
+    @IBOutlet weak var indexingLbl: UILabel!
     
     let indexingUC = IndexingUsecase.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        indexingLbl.isHidden = false
         indexingUC.indexing()
+            .observe {_ in
+                DispatchQueue.main.async {
+                   self.indexingLbl.isHidden = true
+                }
+        }
     }
 
 

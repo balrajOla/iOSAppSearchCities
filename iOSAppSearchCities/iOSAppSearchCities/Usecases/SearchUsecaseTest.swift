@@ -37,6 +37,6 @@ class SearchUsecaseTest: XCTestCase {
     }
 
     private func searchTestData() -> (String, String) {
-        return ("Hurzuf", "Hurzuf")
+        return ("Hur", "Hurfeish")
     }
 }

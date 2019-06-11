@@ -30,12 +30,13 @@ struct Service: ServiceType {
     func searchCities(for keyword: String) -> Future<Cities> {
         let searchKeyPath = keyword.keyPath()
         return self.indexes.get(forKeyPath: searchKeyPath)  // find indexes
+            .fmap { $0.sorted() }
             .bind { values -> Future<Cities> in
                 //get all files
                 let totalIndexesCount = values.count
                 
                 return whenAll(values.map { fileName -> Future<[CityData]> in
-                    self.get(forKey: fileName)
+                    self.get(forKey: fileName).fmap { $0.sorted { $0.getKeyValue() < $1.getKeyValue() } }
                 }).fmap { $0.reduce([], +) }
                     .fmap { Cities(cities: $0) }
                     .fmap {

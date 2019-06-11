@@ -13,17 +13,26 @@ protocol IndexingUsecaseProtocol {
 }
 
 struct IndexingUsecase {
-    let service: ServiceType
-    let indexes: Indexes
-    let serialQueue = DispatchQueue(label: "InsuranceUsecaseQueue")
+    private let service: ServiceType
+    private let indexes: Indexes
+    private let serialQueue = DispatchQueue(label: "InsuranceUsecaseQueue")
+    private var isIndexing: Future<Bool> = Future<Bool>()
     
-    init(service: ServiceType,
+    public static let sharedInstance = IndexingUsecase(service: AppEnvironment.current.apiService)
+    
+    private init(service: ServiceType,
          indexes: Indexes = Indexes(for: FACache.citiesIndexesKey)) {
         self.service = service
         self.indexes = indexes
+        
+        self.isIndexing = self.generateIndexes()
     }
     
-    func generateIndexes() -> Future<Bool> {
+    public func indexing() -> Future<Bool> {
+        return self.isIndexing
+    }
+    
+    private func generateIndexes() -> Future<Bool> {
         if AppEnvironment.current.cache[FACache.isIndexingCompleted] != nil {
             return Future<Bool>(value: true)
         }

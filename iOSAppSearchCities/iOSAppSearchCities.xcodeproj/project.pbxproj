@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A200866822AFAC5F00BE1C6C /* IndexManagerUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200866722AFAC5F00BE1C6C /* IndexManagerUsecase.swift */; };
 		A214262222AD8235006D8FD1 /* Indexes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262122AD8235006D8FD1 /* Indexes.swift */; };
 		A214262422AD885F006D8FD1 /* Dictionary+KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262322AD885F006D8FD1 /* Dictionary+KeyPath.swift */; };
 		A214262622AD8891006D8FD1 /* String+KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262522AD8891006D8FD1 /* String+KeyPath.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A200866722AFAC5F00BE1C6C /* IndexManagerUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexManagerUsecase.swift; sourceTree = "<group>"; };
 		A214262122AD8235006D8FD1 /* Indexes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indexes.swift; sourceTree = "<group>"; };
 		A214262322AD885F006D8FD1 /* Dictionary+KeyPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+KeyPath.swift"; sourceTree = "<group>"; };
 		A214262522AD8891006D8FD1 /* String+KeyPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+KeyPath.swift"; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				A214264422AE2C20006D8FD1 /* IndexingUsecase.swift */,
 				A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */,
+				A200866722AFAC5F00BE1C6C /* IndexManagerUsecase.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				A214262622AD8891006D8FD1 /* String+KeyPath.swift in Sources */,
 				A214263822ADF686006D8FD1 /* PulseAnimation.swift in Sources */,
 				A2CB1EDD22AD76C2000FAB15 /* Service.swift in Sources */,
+				A200866822AFAC5F00BE1C6C /* IndexManagerUsecase.swift in Sources */,
 				A2CB1EDA22AD7075000FAB15 /* CityData.swift in Sources */,
 				A2CB1ED722AD6EF5000FAB15 /* CitiesDetail.swift in Sources */,
 				A214263B22ADF686006D8FD1 /* ToastMessage.swift in Sources */,

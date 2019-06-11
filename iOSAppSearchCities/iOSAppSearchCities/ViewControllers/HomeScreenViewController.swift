@@ -15,15 +15,7 @@ class HomeScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        Loader.show(blockingLoader: false)
-        
         indexingUC.indexing()
-            .observe { _ in
-                DispatchQueue.main.async {
-                    Loader.hide()
-                }
-        }
     }
 
 

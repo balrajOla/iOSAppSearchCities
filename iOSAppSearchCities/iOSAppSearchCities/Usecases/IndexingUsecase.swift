@@ -12,11 +12,12 @@ protocol IndexingUsecaseProtocol {
     func generateIndexes() -> Future<Bool>
 }
 
-struct IndexingUsecase {
+class IndexingUsecase {
     private let service: ServiceType
     private let indexes: Indexes
     private let serialQueue = DispatchQueue(label: "InsuranceUsecaseQueue")
     private var isIndexing: Future<Bool> = Future<Bool>()
+    private var indexingDict: [String: IndexManagerUsecase] = [String: IndexManagerUsecase]()
     
     
     public static let sharedInstance = IndexingUsecase(service: Service())
@@ -47,26 +48,10 @@ struct IndexingUsecase {
                         let indexPath = citiesData.getKeyPath()
                         let result = Future<Bool>()
                         
-                        self.serialQueue.async {
-                        self.indexes.get(forKeyPath: indexPath)
-                            .bind { names -> Future<Bool> in
-                                guard let fileIndex = names.first else {
-                                    let fileName = citiesData.getFileName()
-                                    return self.service.save(forKey: fileName)([citiesData])
-                                        .bind { _ in
-                                            return self.indexes.save(forKeyPath: indexPath, value: fileName) }
-                                }
-                                
-                                return self.service.get(forKey: fileIndex)
-                                    .bind {
-                                        var citiesValue = $0
-                                        if citiesValue.first(where: { $0.getKeyValue() == citiesData.getKeyValue() }) == nil {
-                                            citiesValue.append(citiesData)
-                                            return self.service.save(forKey: fileIndex)(citiesValue)
-                                        } else {
-                                            return Future<Bool>(value: true)
-                                        }
-                                }
+                        DispatchQueue.global(qos: .utility).async {
+                        self.getIndexing(forKeyPath: indexPath)
+                            .bind {
+                                $0.save(data: citiesData)
                             }.observe {
                                 switch $0 {
                                 case .success(let success):
@@ -92,6 +77,20 @@ struct IndexingUsecase {
             }
         }
         
+        return response
+    }
+    
+    private func getIndexing(forKeyPath keyPath: KeyPath) -> Future<IndexManagerUsecase> {
+        let response = Future<IndexManagerUsecase>()
+        serialQueue.async {
+            if let uc = self.indexingDict[keyPath.path] {
+                response.resolve(with: uc)
+            } else {
+                let uc = IndexManagerUsecase(forKey: keyPath)
+                self.indexingDict[keyPath.path] = uc
+                response.resolve(with: uc)
+            }
+        }
         return response
     }
 }

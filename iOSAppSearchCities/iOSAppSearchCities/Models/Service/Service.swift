@@ -69,7 +69,7 @@ struct Service: ServiceType {
         let result = Future<[CityData]>()
         
         guard let resultWritten = try? StorageHelper.retrieve("\(key).json", from: StorageHelper.Directory.caches, as: [CityData].self) else {
-            result.reject(with: ServiceError.noDataToRead)
+            result.resolve(with: [CityData]())
             return result
         }
         

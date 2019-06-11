@@ -10,11 +10,16 @@ import UIKit
 
 class HomeScreenViewController: UIViewController {
     @IBOutlet weak var indexingLbl: UILabel!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
     
+    let viewModel = HomeScreenViewModel()
     let indexingUC = IndexingUsecase.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setUpSearch()
 
         indexingLbl.isHidden = false
         indexingUC.indexing()

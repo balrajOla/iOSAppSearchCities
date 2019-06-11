@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+class HomeScreenViewModel {
+    func search(forKeyword keyword: String) -> Future<Bool> {
+        return Future<Bool>()
+    }
+}

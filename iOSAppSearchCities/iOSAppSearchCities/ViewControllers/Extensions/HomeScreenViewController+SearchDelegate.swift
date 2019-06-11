@@ -6,4 +6,22 @@
 //  Copyright © 2019 Balraj Singh. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension HomeScreenViewController: UISearchBarDelegate {
+    func setUpSearch() {
+        self.searchBar.delegate = self
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        Loader.show(blockingLoader: false)
+        self.viewModel.search(forKeyword: searchText)
+            .observe { _ in
+                // When search completes reload the table
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    Loader.hide()
+                }
+        }
+    }
+}

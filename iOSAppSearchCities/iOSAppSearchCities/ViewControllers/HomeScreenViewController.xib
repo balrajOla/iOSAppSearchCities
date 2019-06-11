@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeScreenViewController" customModule="iOSAppSearchCities" customModuleProvider="target">
             <connections>
                 <outlet property="indexingLbl" destination="bce-8E-7tI" id="CtK-25-NQ3"/>
+                <outlet property="searchBar" destination="5G7-hF-BBu" id="6SH-3w-99Q"/>
+                <outlet property="tableView" destination="5Ct-zU-81J" id="y4q-rf-AD6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

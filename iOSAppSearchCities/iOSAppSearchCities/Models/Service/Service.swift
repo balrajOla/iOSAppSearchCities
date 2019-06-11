@@ -39,7 +39,7 @@ struct Service: ServiceType {
                 }).fmap { $0.reduce([], +) }
                     .fmap { Cities(cities: $0) }
                     .fmap {
-                        if totalIndexesCount > 0 {
+                        if totalIndexesCount > 1 {
                             return $0
                         } else {
                             return Cities(cityInfo: $0.info.filter { $0.key.starts(with: keyword) })

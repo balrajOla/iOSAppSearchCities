@@ -13,7 +13,7 @@ public enum FACacheError: Error {
 }
 
 public final class FACache {
-  private let cache = NSCache<NSString, AnyObject>()
+  private let cache = UserDefaults(suiteName: "iOSAppCache")
   
   public static let citiesIndexesKey = "citiesIndexesKey"
   public static let isIndexingCompleted = "isIndexingCompleted"
@@ -23,18 +23,18 @@ public final class FACache {
   
   public subscript(key: String) -> Any? {
     get {
-      return self.cache.object(forKey: key as NSString)
+      return self.cache?.object(forKey: key)
     }
     set {
       if let newValue = newValue {
-        self.cache.setObject(newValue as AnyObject, forKey: key as NSString)
+        self.cache?.set(newValue, forKey: key)
       } else {
-        self.cache.removeObject(forKey: key as NSString)
+        self.cache?.removeObject(forKey: key)
       }
     }
   }
   
   public func removeAllObjects() {
-    self.cache.removeAllObjects()
+    self.cache?.removeSuite(named: "iOSAppCache")
   }
 }

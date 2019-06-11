@@ -7,3 +7,26 @@
 //
 
 import UIKit
+
+extension HomeScreenViewController: UITableViewDataSource {
+    func setUpTableView() {
+        self.tableView.dataSource = self
+        self.tableView.rowHeight = UITableView.automaticDimension;
+        self.tableView.registerCells([HomeScreenTableViewCell.self], bundle: Bundle.main)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String.stringFromClass(HomeScreenTableViewCell.self), for: indexPath)
+        
+        if let homeScreenCell = cell as? HomeScreenTableViewCell,
+            let cityData = self.viewModel.getCityDetail(forIndex: indexPath.row)  {
+            homeScreenCell.setUp(data: cityData)
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.viewModel.getTotalCitiesCount()
+    }
+}

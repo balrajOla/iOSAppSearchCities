@@ -16,11 +16,16 @@ extension HomeScreenViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         Loader.show(blockingLoader: false)
         self.viewModel.search(forKeyword: searchText)
-            .observe { _ in
-                // When search completes reload the table
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    Loader.hide()
+            .observe {
+                switch $0 {
+                case .success(_):
+                    // When search completes reload the table
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                        Loader.hide()
+                    }
+                case .failure(_):
+                    break
                 }
         }
     }

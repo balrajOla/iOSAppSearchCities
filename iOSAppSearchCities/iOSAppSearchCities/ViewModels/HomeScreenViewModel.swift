@@ -9,6 +9,7 @@
 import Foundation
 
 enum HomeScreenViewModelError: Error {
+    case oldRequest
     case noData
 }
 
@@ -16,7 +17,7 @@ class HomeScreenViewModel {
     private var searchKeyword: String = ""
     private let service: ServiceType
     private let fetchingLocationDebounceTime = 0.4
-    private var searchFn: ((String) -> Future<Cities>)?
+    private var searchFn: ((String) -> Future<(String, Cities)>)?
     private var searchedResponse: Cities?
     
     init(service: ServiceType = Service(indexes: Indexes(for: FACache.citiesIndexesKey))) {
@@ -33,8 +34,13 @@ class HomeScreenViewModel {
             .observe {
                 switch $0 {
                 case .success(let value):
-                    self.searchedResponse = value
-                    response.resolve(with: true)
+                    if self.searchKeyword == value.0 {
+                        self.searchedResponse = value.1
+                        response.resolve(with: true)
+                    } else {
+                        response.reject(with: HomeScreenViewModelError.oldRequest)
+                    }
+                    
                 case .failure(_ ):
                     self.searchedResponse = nil
                     response.reject(with: HomeScreenViewModelError.noData)
@@ -44,6 +50,13 @@ class HomeScreenViewModel {
         return response
     }
     
+    func getTotalCitiesCount() -> Int {
+        return self.searchedResponse?.info.count ?? 0
+    }
+    
+    public func getCityDetail(forIndex index: Int) -> City? {
+        return self.searchedResponse?.info[index]
+    }
     
     private func setup() {
        self.searchFn = OperationQueue.debounce(delay: fetchingLocationDebounceTime, action: { self.service.searchCities(for: $0) })

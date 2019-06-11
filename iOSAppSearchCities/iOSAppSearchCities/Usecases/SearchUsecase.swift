@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SearchUsecaseProtocol {
-    func search(byKeyword keyword: String) -> Future<Cities>
+    func search(byKeyword keyword: String) -> Future<(String, Cities)>
 }
 
 struct SearchUsecase: SearchUsecaseProtocol {
@@ -19,7 +19,7 @@ struct SearchUsecase: SearchUsecaseProtocol {
         self.service = service
     }
     
-    func search(byKeyword keyword: String) -> Future<Cities> {
+    func search(byKeyword keyword: String) -> Future<(String, Cities)> {
         return self.service.searchCities(for: keyword)
     }
 }

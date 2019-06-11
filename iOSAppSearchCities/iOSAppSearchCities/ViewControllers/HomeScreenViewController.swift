@@ -20,6 +20,7 @@ class HomeScreenViewController: UIViewController {
         super.viewDidLoad()
         
         self.setUpSearch()
+        self.setUpTableView()
 
         indexingLbl.isHidden = false
         indexingUC.indexing()

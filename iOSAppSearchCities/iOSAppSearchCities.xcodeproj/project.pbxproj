@@ -29,6 +29,7 @@
 		A214264522AE2C20006D8FD1 /* IndexingUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214264422AE2C20006D8FD1 /* IndexingUsecase.swift */; };
 		A21A72E822B01E7C0092A9CD /* HomeScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A72E622B01E7C0092A9CD /* HomeScreenTableViewCell.swift */; };
 		A21A72E922B01E7C0092A9CD /* HomeScreenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A21A72E722B01E7C0092A9CD /* HomeScreenTableViewCell.xib */; };
+		A21A72EB22B024090092A9CD /* Debouce.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A72EA22B024090092A9CD /* Debouce.swift */; };
 		A277E65522AEA1AC008B0A2D /* SearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */; };
 		A277E65722AEB4F6008B0A2D /* LRUCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277E65622AEB4F6008B0A2D /* LRUCache.swift */; };
 		A277E65922AEB52B008B0A2D /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277E65822AEB52B008B0A2D /* LinkedList.swift */; };
@@ -80,6 +81,7 @@
 		A214264422AE2C20006D8FD1 /* IndexingUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexingUsecase.swift; sourceTree = "<group>"; };
 		A21A72E622B01E7C0092A9CD /* HomeScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTableViewCell.swift; sourceTree = "<group>"; };
 		A21A72E722B01E7C0092A9CD /* HomeScreenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreenTableViewCell.xib; sourceTree = "<group>"; };
+		A21A72EA22B024090092A9CD /* Debouce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouce.swift; sourceTree = "<group>"; };
 		A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecase.swift; sourceTree = "<group>"; };
 		A277E65622AEB4F6008B0A2D /* LRUCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUCache.swift; sourceTree = "<group>"; };
 		A277E65822AEB52B008B0A2D /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				A214264122AE2283006D8FD1 /* StorageHelper.swift */,
 				A277E65622AEB4F6008B0A2D /* LRUCache.swift */,
 				A277E65822AEB52B008B0A2D /* LinkedList.swift */,
+				A21A72EA22B024090092A9CD /* Debouce.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				A214263C22ADF686006D8FD1 /* Loader.swift in Sources */,
 				A277E65522AEA1AC008B0A2D /* SearchUsecase.swift in Sources */,
 				A214262622AD8891006D8FD1 /* String+KeyPath.swift in Sources */,
+				A21A72EB22B024090092A9CD /* Debouce.swift in Sources */,
 				A214263822ADF686006D8FD1 /* PulseAnimation.swift in Sources */,
 				A2CB1EDD22AD76C2000FAB15 /* Service.swift in Sources */,
 				A200866822AFAC5F00BE1C6C /* IndexManagerUsecase.swift in Sources */,

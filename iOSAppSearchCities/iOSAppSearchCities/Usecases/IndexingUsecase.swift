@@ -35,7 +35,7 @@ class IndexingUsecase {
     }
     
     private func generateIndexes() -> Future<Bool> {
-        if AppEnvironment.current.cache[FACache.isIndexingCompleted] != nil {
+        if UserDefaults.standard.bool(forKey: FACache.isIndexingCompleted) {
             return Future<Bool>(value: true)
         }
         
@@ -65,7 +65,7 @@ class IndexingUsecase {
                         return result
                     })
                 }.fmap { value -> Bool in
-                    AppEnvironment.current.cache[FACache.isIndexingCompleted] = true
+                    UserDefaults.standard.set(true, forKey: FACache.isIndexingCompleted)
                     return value.reduce(true, { $0 && $1 })
                 }.observe {
                     switch $0 {

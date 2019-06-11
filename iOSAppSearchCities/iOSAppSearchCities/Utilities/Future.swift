@@ -92,11 +92,11 @@ extension Future {
 }
 
 
+let dispatchGroup = DispatchGroup()
 func whenAll<T>(_ futures: [Future<T>]) -> Future<[T]> {
     let futureResponse = Future<[T]>()
     var successRes: [T] = [T]()
     var failRes: Error?
-    let dispatchGroup = DispatchGroup()
     
     futures.forEach {
         dispatchGroup.enter()

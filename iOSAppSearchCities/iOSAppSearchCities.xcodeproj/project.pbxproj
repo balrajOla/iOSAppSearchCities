@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A200866822AFAC5F00BE1C6C /* IndexManagerUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200866722AFAC5F00BE1C6C /* IndexManagerUsecase.swift */; };
+		A200867022AFC9D600BE1C6C /* iOSAppSearchCitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200866F22AFC9D600BE1C6C /* iOSAppSearchCitiesTests.swift */; };
+		A200867A22AFCA2100BE1C6C /* SearchUsecaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200867922AFCA2100BE1C6C /* SearchUsecaseTest.swift */; };
 		A214262222AD8235006D8FD1 /* Indexes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262122AD8235006D8FD1 /* Indexes.swift */; };
 		A214262422AD885F006D8FD1 /* Dictionary+KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262322AD885F006D8FD1 /* Dictionary+KeyPath.swift */; };
 		A214262622AD8891006D8FD1 /* String+KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262522AD8891006D8FD1 /* String+KeyPath.swift */; };
@@ -38,8 +40,22 @@
 		A2CB1EDF22AD7955000FAB15 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB1EDE22AD7955000FAB15 /* Future.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A200867222AFC9D600BE1C6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2CB1EB122AD5172000FAB15 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2CB1EB822AD5172000FAB15;
+			remoteInfo = iOSAppSearchCities;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		A200866722AFAC5F00BE1C6C /* IndexManagerUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexManagerUsecase.swift; sourceTree = "<group>"; };
+		A200866D22AFC9D600BE1C6C /* iOSAppSearchCitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSAppSearchCitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A200866F22AFC9D600BE1C6C /* iOSAppSearchCitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSAppSearchCitiesTests.swift; sourceTree = "<group>"; };
+		A200867122AFC9D600BE1C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A200867922AFCA2100BE1C6C /* SearchUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecaseTest.swift; sourceTree = "<group>"; };
 		A214262122AD8235006D8FD1 /* Indexes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indexes.swift; sourceTree = "<group>"; };
 		A214262322AD885F006D8FD1 /* Dictionary+KeyPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+KeyPath.swift"; sourceTree = "<group>"; };
 		A214262522AD8891006D8FD1 /* String+KeyPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+KeyPath.swift"; sourceTree = "<group>"; };
@@ -73,6 +89,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A200866A22AFC9D600BE1C6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A2CB1EB622AD5172000FAB15 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,12 +106,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A200866E22AFC9D600BE1C6C /* iOSAppSearchCitiesTests */ = {
+			isa = PBXGroup;
+			children = (
+				A200866F22AFC9D600BE1C6C /* iOSAppSearchCitiesTests.swift */,
+				A200867122AFC9D600BE1C6C /* Info.plist */,
+			);
+			path = iOSAppSearchCitiesTests;
+			sourceTree = "<group>";
+		};
 		A214264322AE26C1006D8FD1 /* Usecases */ = {
 			isa = PBXGroup;
 			children = (
 				A214264422AE2C20006D8FD1 /* IndexingUsecase.swift */,
 				A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */,
 				A200866722AFAC5F00BE1C6C /* IndexManagerUsecase.swift */,
+				A200867922AFCA2100BE1C6C /* SearchUsecaseTest.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -97,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				A2CB1EBB22AD5173000FAB15 /* iOSAppSearchCities */,
+				A200866E22AFC9D600BE1C6C /* iOSAppSearchCitiesTests */,
 				A2CB1EBA22AD5173000FAB15 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				A2CB1EB922AD5173000FAB15 /* iOSAppSearchCities.app */,
+				A200866D22AFC9D600BE1C6C /* iOSAppSearchCitiesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -195,6 +230,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A200866C22AFC9D600BE1C6C /* iOSAppSearchCitiesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A200867422AFC9D600BE1C6C /* Build configuration list for PBXNativeTarget "iOSAppSearchCitiesTests" */;
+			buildPhases = (
+				A200866922AFC9D600BE1C6C /* Sources */,
+				A200866A22AFC9D600BE1C6C /* Frameworks */,
+				A200866B22AFC9D600BE1C6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A200867322AFC9D600BE1C6C /* PBXTargetDependency */,
+			);
+			name = iOSAppSearchCitiesTests;
+			productName = iOSAppSearchCitiesTests;
+			productReference = A200866D22AFC9D600BE1C6C /* iOSAppSearchCitiesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A2CB1EB822AD5172000FAB15 /* iOSAppSearchCities */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2CB1ECB22AD5176000FAB15 /* Build configuration list for PBXNativeTarget "iOSAppSearchCities" */;
@@ -222,6 +275,10 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Balraj Singh";
 				TargetAttributes = {
+					A200866C22AFC9D600BE1C6C = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = A2CB1EB822AD5172000FAB15;
+					};
 					A2CB1EB822AD5172000FAB15 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -241,11 +298,19 @@
 			projectRoot = "";
 			targets = (
 				A2CB1EB822AD5172000FAB15 /* iOSAppSearchCities */,
+				A200866C22AFC9D600BE1C6C /* iOSAppSearchCitiesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A200866B22AFC9D600BE1C6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A2CB1EB722AD5172000FAB15 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -259,6 +324,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A200866922AFC9D600BE1C6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A200867022AFC9D600BE1C6C /* iOSAppSearchCitiesTests.swift in Sources */,
+				A200867A22AFCA2100BE1C6C /* SearchUsecaseTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A2CB1EB522AD5172000FAB15 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,7 +368,55 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A200867322AFC9D600BE1C6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A2CB1EB822AD5172000FAB15 /* iOSAppSearchCities */;
+			targetProxy = A200867222AFC9D600BE1C6C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		A200867522AFC9D600BE1C6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 998QCUR89P;
+				INFOPLIST_FILE = iOSAppSearchCitiesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Balraj.iOSAppSearchCitiesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSAppSearchCities.app/iOSAppSearchCities";
+			};
+			name = Debug;
+		};
+		A200867622AFC9D600BE1C6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 998QCUR89P;
+				INFOPLIST_FILE = iOSAppSearchCitiesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Balraj.iOSAppSearchCitiesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSAppSearchCities.app/iOSAppSearchCities";
+			};
+			name = Release;
+		};
 		A2CB1EC922AD5176000FAB15 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -452,6 +574,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A200867422AFC9D600BE1C6C /* Build configuration list for PBXNativeTarget "iOSAppSearchCitiesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A200867522AFC9D600BE1C6C /* Debug */,
+				A200867622AFC9D600BE1C6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A2CB1EB422AD5172000FAB15 /* Build configuration list for PBXProject "iOSAppSearchCities" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

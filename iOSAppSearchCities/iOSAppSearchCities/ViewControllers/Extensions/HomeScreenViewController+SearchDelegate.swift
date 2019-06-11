@@ -24,7 +24,24 @@ extension HomeScreenViewController: UISearchBarDelegate {
                         self.tableView.reloadData()
                         Loader.hide()
                     }
-                case .failure(_):
+                case .failure(let error):
+                    guard let err = error as? HomeScreenViewModelError else {
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                            Loader.hide()
+                        }
+                        return
+                    }
+                    
+                    switch err {
+                    case .noData:
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                            Loader.hide()
+                        }
+                    case .oldRequest:
+                        break
+                    }
                     break
                 }
         }

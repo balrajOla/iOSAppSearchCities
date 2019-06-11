@@ -37,7 +37,7 @@ struct Service: ServiceType {
                 
                 return whenAll(values.map { fileName -> Future<[CityData]> in
                     self.get(forKey: fileName).fmap { $0.sorted { $0.getKeyValue() < $1.getKeyValue() } }
-                }).fmap { $0.reduce([], +) }
+                }, qos: .userInitiated).fmap { $0.reduce([], +) }
                     .fmap { Cities(cities: $0) }
                     .fmap {
                         if totalIndexesCount > 1 {

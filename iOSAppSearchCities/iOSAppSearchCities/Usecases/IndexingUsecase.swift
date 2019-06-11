@@ -16,6 +16,7 @@ class IndexingUsecase {
     private let service: ServiceType
     private let indexes: Indexes
     private let serialQueue = DispatchQueue(label: "InsuranceUsecaseQueue")
+   
     private var isIndexing: Future<Bool> = Future<Bool>()
     private var indexingDict: [String: IndexManagerUsecase] = [String: IndexManagerUsecase]()
     

@@ -92,11 +92,11 @@ extension Future {
 }
 
 
-let dispatchGroup = DispatchGroup()
-func whenAll<T>(_ futures: [Future<T>]) -> Future<[T]> {
+func whenAll<T>(_ futures: [Future<T>], qos: DispatchQoS.QoSClass = .utility) -> Future<[T]> {
     let futureResponse = Future<[T]>()
     var successRes: [T] = [T]()
     var failRes: Error?
+    let dispatchGroup = DispatchGroup()
     
     futures.forEach {
         dispatchGroup.enter()
@@ -112,7 +112,7 @@ func whenAll<T>(_ futures: [Future<T>]) -> Future<[T]> {
         })
     }
     
-    dispatchGroup.notify(queue: .global(qos: .utility)) {
+    dispatchGroup.notify(queue: .global(qos: qos)) {
         if let err = failRes {
             futureResponse.reject(with: err)
         } else {

@@ -50,6 +50,14 @@ class HomeScreenViewModel {
         return response
     }
     
+    func getMapViewModel(forIndex index: Int) -> MapScreenViewModel? {
+        guard let selectedData = self.searchedResponse?.info[index] else {
+            return nil
+        }
+        
+        return MapScreenViewModel(cityDetail: selectedData.detail)
+    }
+    
     func getTotalCitiesCount() -> Int {
         return self.searchedResponse?.info.count ?? 0
     }

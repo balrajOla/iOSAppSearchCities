@@ -8,9 +8,11 @@
 
 import UIKit
 
-extension HomeScreenViewController: UITableViewDataSource {
+extension HomeScreenViewController: UITableViewDataSource, UITableViewDelegate {
+    //MARK: Tableview DataSource
     func setUpTableView() {
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         self.tableView.rowHeight = UITableView.automaticDimension;
         self.tableView.registerCells([HomeScreenTableViewCell.self], bundle: Bundle.main)
     }
@@ -28,5 +30,18 @@ extension HomeScreenViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.getTotalCitiesCount()
+    }
+    
+    
+    //MARK: Tableview Delegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        _ = self.viewModel.getMapViewModel(forIndex: indexPath.row)
+            .map(self.navigateToMapView(withViewModel:))
+    }
+    
+    private func navigateToMapView(withViewModel vm: MapScreenViewModel) -> Unit {
+        self.navigationController?.pushViewController(MapScreenViewController(viewModel: vm), animated: true)
+        
+        return Unit(symbol: "Navigated to MapView")
     }
 }

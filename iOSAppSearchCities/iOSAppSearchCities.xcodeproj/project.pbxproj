@@ -28,6 +28,10 @@
 		A21A72E822B01E7C0092A9CD /* HomeScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A72E622B01E7C0092A9CD /* HomeScreenTableViewCell.swift */; };
 		A21A72E922B01E7C0092A9CD /* HomeScreenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A21A72E722B01E7C0092A9CD /* HomeScreenTableViewCell.xib */; };
 		A21A72EB22B024090092A9CD /* Debouce.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A72EA22B024090092A9CD /* Debouce.swift */; };
+		A21A72ED22B0C9CF0092A9CD /* MapScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A72EC22B0C9CF0092A9CD /* MapScreenViewModel.swift */; };
+		A21A72F022B0C9E40092A9CD /* MapScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A72EE22B0C9E40092A9CD /* MapScreenViewController.swift */; };
+		A21A72F122B0C9E40092A9CD /* MapScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A21A72EF22B0C9E40092A9CD /* MapScreenViewController.xib */; };
+		A21A72F422B0CB3E0092A9CD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21A72F322B0CB3E0092A9CD /* MapKit.framework */; };
 		A277E65522AEA1AC008B0A2D /* SearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */; };
 		A2CB1EBD22AD5173000FAB15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */; };
 		A2CB1EC422AD5176000FAB15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2CB1EC322AD5176000FAB15 /* Assets.xcassets */; };
@@ -76,6 +80,10 @@
 		A21A72E622B01E7C0092A9CD /* HomeScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTableViewCell.swift; sourceTree = "<group>"; };
 		A21A72E722B01E7C0092A9CD /* HomeScreenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreenTableViewCell.xib; sourceTree = "<group>"; };
 		A21A72EA22B024090092A9CD /* Debouce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouce.swift; sourceTree = "<group>"; };
+		A21A72EC22B0C9CF0092A9CD /* MapScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewModel.swift; sourceTree = "<group>"; };
+		A21A72EE22B0C9E40092A9CD /* MapScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
+		A21A72EF22B0C9E40092A9CD /* MapScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapScreenViewController.xib; sourceTree = "<group>"; };
+		A21A72F322B0CB3E0092A9CD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecase.swift; sourceTree = "<group>"; };
 		A2CB1EB922AD5173000FAB15 /* iOSAppSearchCities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSAppSearchCities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21A72F422B0CB3E0092A9CD /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,12 +139,21 @@
 			path = Usecases;
 			sourceTree = "<group>";
 		};
+		A21A72F222B0CB3E0092A9CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A21A72F322B0CB3E0092A9CD /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A2CB1EB022AD5172000FAB15 = {
 			isa = PBXGroup;
 			children = (
 				A2CB1EBB22AD5173000FAB15 /* iOSAppSearchCities */,
 				A200866E22AFC9D600BE1C6C /* iOSAppSearchCitiesTests */,
 				A2CB1EBA22AD5173000FAB15 /* Products */,
+				A21A72F222B0CB3E0092A9CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,6 +190,8 @@
 				A2EE2BFE22B0108400B60533 /* Extensions */,
 				A2CB1ECF22AD52EB000FAB15 /* HomeScreenViewController.swift */,
 				A2CB1ED022AD52EB000FAB15 /* HomeScreenViewController.xib */,
+				A21A72EE22B0C9E40092A9CD /* MapScreenViewController.swift */,
+				A21A72EF22B0C9E40092A9CD /* MapScreenViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -245,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				A2EE2C0222B0111200B60533 /* HomeScreenViewModel.swift */,
+				A21A72EC22B0C9CF0092A9CD /* MapScreenViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -348,6 +369,7 @@
 			files = (
 				A21A72E922B01E7C0092A9CD /* HomeScreenTableViewCell.xib in Resources */,
 				A214262822ADEF6D006D8FD1 /* cities.json in Resources */,
+				A21A72F122B0C9E40092A9CD /* MapScreenViewController.xib in Resources */,
 				A2CB1EC422AD5176000FAB15 /* Assets.xcassets in Resources */,
 				A2CB1ED222AD52EB000FAB15 /* HomeScreenViewController.xib in Resources */,
 			);
@@ -371,6 +393,7 @@
 			files = (
 				A214262222AD8235006D8FD1 /* Indexes.swift in Sources */,
 				A2CB1EDF22AD7955000FAB15 /* Future.swift in Sources */,
+				A21A72F022B0C9E40092A9CD /* MapScreenViewController.swift in Sources */,
 				A214263A22ADF686006D8FD1 /* Environment.swift in Sources */,
 				A214263E22ADF686006D8FD1 /* AppEnvironment.swift in Sources */,
 				A214262422AD885F006D8FD1 /* Dictionary+KeyPath.swift in Sources */,
@@ -382,6 +405,7 @@
 				A2EE2C0522B0113400B60533 /* HomeScreenViewController+SearchDelegate.swift in Sources */,
 				A214263C22ADF686006D8FD1 /* Loader.swift in Sources */,
 				A277E65522AEA1AC008B0A2D /* SearchUsecase.swift in Sources */,
+				A21A72ED22B0C9CF0092A9CD /* MapScreenViewModel.swift in Sources */,
 				A214262622AD8891006D8FD1 /* String+KeyPath.swift in Sources */,
 				A21A72EB22B024090092A9CD /* Debouce.swift in Sources */,
 				A214263822ADF686006D8FD1 /* PulseAnimation.swift in Sources */,

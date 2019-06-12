@@ -8,12 +8,12 @@
 
 import UIKit
 
-class HomeScreenViewController: UIViewController {
+class SearchCitiesListViewController: UIViewController {
     @IBOutlet weak var indexingLbl: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    let viewModel = HomeScreenViewModel()
+    let viewModel = SearchCitiesListViewModel()
     let indexingUC = IndexingUsecase.sharedInstance
 
     override func viewDidLoad() {

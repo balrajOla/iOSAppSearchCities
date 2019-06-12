@@ -8,19 +8,19 @@
 
 import UIKit
 
-extension HomeScreenViewController: UITableViewDataSource, UITableViewDelegate {
+extension SearchCitiesListViewController: UITableViewDataSource, UITableViewDelegate {
     //MARK: Tableview DataSource
     func setUpTableView() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.rowHeight = UITableView.automaticDimension;
-        self.tableView.registerCells([HomeScreenTableViewCell.self], bundle: Bundle.main)
+        self.tableView.registerCells([SearchCitiesListTableViewCell.self], bundle: Bundle.main)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String.stringFromClass(HomeScreenTableViewCell.self), for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: String.stringFromClass(SearchCitiesListTableViewCell.self), for: indexPath)
         
-        if let homeScreenCell = cell as? HomeScreenTableViewCell,
+        if let homeScreenCell = cell as? SearchCitiesListTableViewCell,
             let cityData = self.viewModel.getCityDetail(forIndex: indexPath.row)  {
             homeScreenCell.setUp(data: cityData)
         }

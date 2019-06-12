@@ -13,7 +13,7 @@ enum HomeScreenViewModelError: Error {
     case noData
 }
 
-class HomeScreenViewModel {
+class SearchCitiesListViewModel {
     private var searchKeyword: String = ""
     private let service: ServiceType
     private let fetchingLocationDebounceTime = 0.4

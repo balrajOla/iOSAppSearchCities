@@ -22,7 +22,7 @@ struct CityData: Codable {
     }
     
     func getKeyPath() -> KeyPath {
-        return "\(name)_\(country)".keyPath()
+        return "\(name)_\(country)".lowercased().keyPath()
     }
     
     func getFileName() -> String {
@@ -30,7 +30,7 @@ struct CityData: Codable {
     }
     
     func getKeyValue() -> String {
-        return "\(name)_\(country)"
+        return "\(name)_\(country)".lowercased()
     }
 }
 

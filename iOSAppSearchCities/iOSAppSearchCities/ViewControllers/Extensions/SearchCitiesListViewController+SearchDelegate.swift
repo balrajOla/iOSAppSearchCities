@@ -8,14 +8,14 @@
 
 import UIKit
 
-extension HomeScreenViewController: UISearchBarDelegate {
+extension SearchCitiesListViewController: UISearchBarDelegate {
     func setUpSearch() {
         self.searchBar.delegate = self
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         Loader.show(blockingLoader: false)
-        self.viewModel.search(forKeyword: searchText)
+        self.viewModel.search(forKeyword: searchText.lowercased())
             .observe { result in
                 _ = result.mapError(self.handleError(error:))
                 _ = result.map(self.handleSuccess(success:))

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeScreenTableViewCell: UITableViewCell {
+class SearchCitiesListTableViewCell: UITableViewCell {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var coordinateLabel: UILabel!

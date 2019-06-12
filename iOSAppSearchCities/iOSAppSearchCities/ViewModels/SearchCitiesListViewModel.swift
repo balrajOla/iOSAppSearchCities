@@ -36,7 +36,13 @@ class SearchCitiesListViewModel {
                 case .success(let value):
                     if self.searchKeyword == value.0 {
                         self.searchedResponse = value.1
-                        response.resolve(with: true)
+                        
+                        if value.1.info.count > 0 {
+                            response.resolve(with: true)
+                        } else {
+                            response.reject(with: HomeScreenViewModelError.noData)
+                        }
+                        
                     } else {
                         response.reject(with: HomeScreenViewModelError.oldRequest)
                     }

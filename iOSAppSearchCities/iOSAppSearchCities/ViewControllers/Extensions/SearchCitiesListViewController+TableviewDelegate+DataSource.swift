@@ -40,7 +40,7 @@ extension SearchCitiesListViewController: UITableViewDataSource, UITableViewDele
     }
     
     private func navigateToMapView(withViewModel vm: MapScreenViewModel) -> Unit {
-        self.navigationController?.pushViewController(MapScreenViewController(viewModel: vm), animated: true)
+        self.showDetailViewController(MapScreenViewController(viewModel: vm), sender: nil)
         
         return Unit(symbol: "Navigated to MapView")
     }

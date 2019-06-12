@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
 
@@ -17,9 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let initialViewController  = SearchCitiesListViewController(nibName:String.stringFromClass(SearchCitiesListViewController.self), bundle: Bundle.main)
         
-        window?.rootViewController = UINavigationController(rootViewController: initialViewController)
+        let splitViewController = UISplitViewController(nibName: nil, bundle: nil)
+        splitViewController.delegate = self
+        splitViewController.preferredDisplayMode = .allVisible
+        
+        let masterVC  = UINavigationController(rootViewController: SearchCitiesListViewController(nibName:String.stringFromClass(SearchCitiesListViewController.self), bundle: Bundle.main))
+        let detailVC = UINavigationController(rootViewController: NothingSelectedViewController(nibName: String.stringFromClass(NothingSelectedViewController.self), bundle: Bundle.main))
+        splitViewController.viewControllers = [masterVC, detailVC]
+        
+        window?.rootViewController = splitViewController
         window?.makeKeyAndVisible()
         
         print(NSHomeDirectory())

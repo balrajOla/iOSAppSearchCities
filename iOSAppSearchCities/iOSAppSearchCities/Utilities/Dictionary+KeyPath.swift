@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct KeyPath {
+public struct IndexKeyPath {
     var segments: [String]
     
     var isEmpty: Bool { return segments.isEmpty }
@@ -19,22 +19,22 @@ public struct KeyPath {
     /// Strips off the first segment and returns a pair
     /// consisting of the first segment and the remaining key path.
     /// Returns nil if the key path has no segments.
-    func headAndTail() -> (head: String, tail: KeyPath)? {
+    func headAndTail() -> (head: String, tail: IndexKeyPath)? {
         guard !isEmpty else { return nil }
         var tail = segments
         let head = tail.removeFirst()
-        return (head, KeyPath(segments: tail))
+        return (head, IndexKeyPath(segments: tail))
     }
 }
 
 /// Initializes a KeyPath with a string of the form "this.is.a.keypath"
-extension KeyPath {
+extension IndexKeyPath {
     init(_ string: String) {
         segments = string.components(separatedBy: ".")
     }
 }
 
-extension KeyPath: ExpressibleByStringLiteral {
+extension IndexKeyPath: ExpressibleByStringLiteral {
     public init(stringLiteral value: String) {
         self.init(value)
     }
@@ -60,7 +60,7 @@ extension String: StringProtocol {
 
 
 public extension Dictionary where Key: StringProtocol {
-    subscript(keyPath keyPath: KeyPath) -> Any? {
+    subscript(indexKeyPath keyPath: IndexKeyPath) -> Any? {
         get {
             switch keyPath.headAndTail() {
             case nil:
@@ -74,8 +74,8 @@ public extension Dictionary where Key: StringProtocol {
                     // Next nest level is a dictionary.
                     // Start over with remaining key path.
                     let finalResult = nestedDict.keys
-                        .compactMap { ($0 as? String).map { KeyPath($0) } }
-                        .compactMap { nestedDict[keyPath: $0] }
+                        .compactMap { ($0 as? String).map { IndexKeyPath($0) } }
+                        .compactMap { nestedDict[indexKeyPath: $0] }
                     
                     if let nestedArray = finalResult as? [[Any?]] {
                         return nestedArray.reduce([], +).compactMap{ $0 }
@@ -98,7 +98,7 @@ public extension Dictionary where Key: StringProtocol {
                 case let nestedDict as [Key: Any]:
                     // Next nest level is a dictionary.
                     // Start over with remaining key path.
-                    return nestedDict[keyPath: remainingKeyPath]
+                    return nestedDict[indexKeyPath: remainingKeyPath]
                 case let nextValue as Any:
                     // If there is any value then just return that value
                     return nextValue
@@ -124,12 +124,12 @@ public extension Dictionary where Key: StringProtocol {
                 switch value {
                 case var nestedDict as [Key: Any]:
                     // Key path has a tail we need to traverse
-                    nestedDict[keyPath: remainingKeyPath] = newValue
+                    nestedDict[indexKeyPath: remainingKeyPath] = newValue
                     self[key] = nestedDict as? Value
                 default:
                     // Store a new empty dictionary and continue
                     var nestedDict = [Key: Any]()
-                    nestedDict[keyPath: remainingKeyPath] = newValue
+                    nestedDict[indexKeyPath: remainingKeyPath] = newValue
                     self[key] = nestedDict as? Value
                 }
             }

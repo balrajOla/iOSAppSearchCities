@@ -21,7 +21,7 @@ struct CityData: Codable {
         case coord
     }
     
-    func getKeyPath() -> KeyPath {
+    func getKeyPath() -> IndexKeyPath {
         return "\(name)_\(country)".lowercased().keyPath()
     }
     

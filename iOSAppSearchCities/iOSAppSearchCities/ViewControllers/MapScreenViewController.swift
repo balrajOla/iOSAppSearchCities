@@ -28,9 +28,24 @@ class MapScreenViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.title = viewModel.getTitle()
+        self.addInfoButton()
         self.setUpMap()
     }
 
+    private func addInfoButton() {
+        let info = UIBarButtonItem(title: "Info",
+                                   style: UIBarButtonItem.Style.plain,
+                                   target: self,
+                                   action: #selector(infoTapped))
+        navigationItem.rightBarButtonItems = [info]
+    }
+    
+    @objc func infoTapped (sender:UIButton) {
+        let aboutViewController = AboutViewController()
+        let presenter = Presenter(view: aboutViewController, model: self.viewModel.getAboutModelInfo())
+        aboutViewController.presenter = presenter
+        self.navigationController?.pushViewController(aboutViewController, animated: true)
+    }
 
     private func setUpMap() {
         mapView.setRegion(self.viewModel.getCurrentRegion(), animated: true)

@@ -81,7 +81,7 @@ class IndexingUsecase {
         return response
     }
     
-    private func getIndexing(forKeyPath keyPath: KeyPath) -> Future<IndexManagerUsecase> {
+    private func getIndexing(forKeyPath keyPath: IndexKeyPath) -> Future<IndexManagerUsecase> {
         let response = Future<IndexManagerUsecase>()
         serialQueue.async {
             if let uc = self.indexingDict[keyPath.path] {

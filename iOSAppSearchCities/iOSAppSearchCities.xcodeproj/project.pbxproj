@@ -34,6 +34,11 @@
 		A21A72F422B0CB3E0092A9CD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21A72F322B0CB3E0092A9CD /* MapKit.framework */; };
 		A21A72FF22B1143C0092A9CD /* NothingSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A72FD22B1143C0092A9CD /* NothingSelectedViewController.swift */; };
 		A21A730022B1143C0092A9CD /* NothingSelectedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A21A72FE22B1143C0092A9CD /* NothingSelectedViewController.xib */; };
+		A21A730322B124D90092A9CD /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A730222B124D90092A9CD /* AboutView.swift */; };
+		A21A730622B125160092A9CD /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A730522B125160092A9CD /* Presenter.swift */; };
+		A21A730822B125320092A9CD /* AboutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A730722B125320092A9CD /* AboutModel.swift */; };
+		A21A730A22B1255E0092A9CD /* AboutInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A730922B1255E0092A9CD /* AboutInfo.swift */; };
+		A21A730C22B125930092A9CD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A730B22B125930092A9CD /* AboutViewController.swift */; };
 		A277E65522AEA1AC008B0A2D /* SearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */; };
 		A2CB1EBD22AD5173000FAB15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */; };
 		A2CB1EC422AD5176000FAB15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2CB1EC322AD5176000FAB15 /* Assets.xcassets */; };
@@ -88,6 +93,11 @@
 		A21A72F322B0CB3E0092A9CD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A21A72FD22B1143C0092A9CD /* NothingSelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NothingSelectedViewController.swift; sourceTree = "<group>"; };
 		A21A72FE22B1143C0092A9CD /* NothingSelectedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingSelectedViewController.xib; sourceTree = "<group>"; };
+		A21A730222B124D90092A9CD /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		A21A730522B125160092A9CD /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		A21A730722B125320092A9CD /* AboutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModel.swift; sourceTree = "<group>"; };
+		A21A730922B1255E0092A9CD /* AboutInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInfo.swift; sourceTree = "<group>"; };
+		A21A730B22B125930092A9CD /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecase.swift; sourceTree = "<group>"; };
 		A2CB1EB922AD5173000FAB15 /* iOSAppSearchCities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSAppSearchCities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +161,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A21A730122B124C60092A9CD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A21A730222B124D90092A9CD /* AboutView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		A2CB1EB022AD5172000FAB15 = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +208,7 @@
 		A2CB1ECE22AD52CE000FAB15 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A21A730122B124C60092A9CD /* Protocols */,
 				A2EE2C0722B01E2000B60533 /* Cells */,
 				A2EE2BFE22B0108400B60533 /* Extensions */,
 				A2CB1ECF22AD52EB000FAB15 /* SearchCitiesListViewController.swift */,
@@ -198,6 +217,7 @@
 				A21A72EF22B0C9E40092A9CD /* MapScreenViewController.xib */,
 				A21A72FD22B1143C0092A9CD /* NothingSelectedViewController.swift */,
 				A21A72FE22B1143C0092A9CD /* NothingSelectedViewController.xib */,
+				A21A730B22B125930092A9CD /* AboutViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -237,6 +257,8 @@
 			isa = PBXGroup;
 			children = (
 				A2CB1ED622AD6EF5000FAB15 /* CitiesDetail.swift */,
+				A21A730722B125320092A9CD /* AboutModel.swift */,
+				A21A730922B1255E0092A9CD /* AboutInfo.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -263,6 +285,7 @@
 			children = (
 				A2EE2BFF22B010AA00B60533 /* SearchCitiesListViewController+TableviewDelegate+DataSource.swift */,
 				A2EE2C0422B0113400B60533 /* SearchCitiesListViewController+SearchDelegate.swift */,
+				A21A730522B125160092A9CD /* Presenter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -399,6 +422,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A214262222AD8235006D8FD1 /* Indexes.swift in Sources */,
+				A21A730322B124D90092A9CD /* AboutView.swift in Sources */,
+				A21A730622B125160092A9CD /* Presenter.swift in Sources */,
+				A21A730C22B125930092A9CD /* AboutViewController.swift in Sources */,
+				A21A730A22B1255E0092A9CD /* AboutInfo.swift in Sources */,
 				A2CB1EDF22AD7955000FAB15 /* Future.swift in Sources */,
 				A21A72F022B0C9E40092A9CD /* MapScreenViewController.swift in Sources */,
 				A214263A22ADF686006D8FD1 /* Environment.swift in Sources */,
@@ -421,6 +448,7 @@
 				A200866822AFAC5F00BE1C6C /* IndexManagerUsecase.swift in Sources */,
 				A2CB1EDA22AD7075000FAB15 /* CityData.swift in Sources */,
 				A2CB1ED722AD6EF5000FAB15 /* CitiesDetail.swift in Sources */,
+				A21A730822B125320092A9CD /* AboutModel.swift in Sources */,
 				A214263522ADF686006D8FD1 /* DateProtocol.swift in Sources */,
 				A214264222AE2283006D8FD1 /* StorageHelper.swift in Sources */,
 				A214263F22ADF686006D8FD1 /* ErrorHandler.swift in Sources */,

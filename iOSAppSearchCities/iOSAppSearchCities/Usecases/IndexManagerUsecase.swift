@@ -12,9 +12,9 @@ struct IndexManagerUsecase {
     private let queue: DispatchQueue
     private var index: Future<String>
     private let service: ServiceType
-    private let keyPath: KeyPath
+    private let keyPath: IndexKeyPath
     
-    init(forKey keyPath: KeyPath) {
+    init(forKey keyPath: IndexKeyPath) {
         self.service = Service()
         self.queue = DispatchQueue(label: keyPath.path)
         self.keyPath = keyPath

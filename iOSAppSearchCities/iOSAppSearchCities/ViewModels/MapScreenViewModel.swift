@@ -22,6 +22,12 @@ class MapScreenViewModel {
         return cityDetails.name
     }
     
+    func getAboutModelInfo() -> Model {
+        let model = Model()
+        model.aboutInfo = AboutInfo(country: self.cityDetails.country, city: self.cityDetails.name, lat: String(self.cityDetails.coordinate.lat), long: String(self.cityDetails.coordinate.lon))
+        return model
+    }
+    
     func getCurrentRegion() -> MKCoordinateRegion {
         let center = CLLocationCoordinate2D(latitude: cityDetails.coordinate.lat, longitude: cityDetails.coordinate.lon)
         let region = MKCoordinateRegion(center: center, span: mapRegionSpan)

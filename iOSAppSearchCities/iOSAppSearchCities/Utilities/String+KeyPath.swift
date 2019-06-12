@@ -9,12 +9,12 @@
 import Foundation
 
 extension String {
-    func keyPath(withDepthIndex index: Int = AppEnvironment.current.indexingLevel) -> KeyPath {
+    func keyPath(withDepthIndex index: Int = AppEnvironment.current.indexingLevel) -> IndexKeyPath {
         guard !self.isEmpty else {
             return ""
         }
         
-        return KeyPath(self.replacingOccurrences(of: " ", with: "_").permute(withMaxLength: index).joined(separator: "."))
+        return IndexKeyPath(self.replacingOccurrences(of: " ", with: "_").permute(withMaxLength: index).joined(separator: "."))
     }
     
     func permute(withMaxLength length: Int = AppEnvironment.current.indexingLevel) -> [String] {

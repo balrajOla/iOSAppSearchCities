@@ -16,17 +16,17 @@ struct Indexes {
         self.key = key
     }
     
-    func save(forKeyPath keyPath: KeyPath, value: String) -> Future<Bool> {
+    func save(forKeyPath keyPath: IndexKeyPath, value: String) -> Future<Bool> {
         var valueToUpdate = (AppEnvironment.current.cache[self.key] as? [String : Any]) ?? [String : Any]()
-        valueToUpdate[keyPath: keyPath] = value
+        valueToUpdate[indexKeyPath: keyPath] = value
         AppEnvironment.current.cache[self.key] = valueToUpdate
         
         return Future<Bool>(value: true)
     }
     
-    func get(forKeyPath keyPath: KeyPath) -> Future<[String]> {
+    func get(forKeyPath keyPath: IndexKeyPath) -> Future<[String]> {
         let value = (AppEnvironment.current.cache[self.key] as? [String : Any]) ?? [String : Any]()
-        let valueForKeyPath = value[keyPath: keyPath]
+        let valueForKeyPath = value[indexKeyPath: keyPath]
         let defaultValue = Future<[String]>.pure([String]())
         
         switch valueForKeyPath {

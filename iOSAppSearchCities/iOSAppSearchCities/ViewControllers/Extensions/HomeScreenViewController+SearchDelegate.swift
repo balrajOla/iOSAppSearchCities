@@ -16,34 +16,33 @@ extension HomeScreenViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         Loader.show(blockingLoader: false)
         self.viewModel.search(forKeyword: searchText)
-            .observe {
-                switch $0 {
-                case .success(_):
-                    // When search completes reload the table
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                        Loader.hide()
-                    }
-                case .failure(let error):
-                    guard let err = error as? HomeScreenViewModelError else {
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                            Loader.hide()
-                        }
-                        return
-                    }
-                    
-                    switch err {
-                    case .noData:
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                            Loader.hide()
-                        }
-                    case .oldRequest:
-                        break
-                    }
-                    break
+            .observe { result in
+                _ = result.mapError(self.handleError(error:))
+                _ = result.map(self.handleSuccess(success:))
+        }
+    }
+    
+    private func handleSuccess(success: Bool) -> Bool {
+        reloadAndHide()
+        return success
+    }
+
+    private func handleError(error: Error) -> Error {
+        (error as? HomeScreenViewModelError)
+            .flatMap { err -> Void in
+                if err == .noData
+                {
+                    reloadAndHide()
                 }
+        }
+        
+        return error
+    }
+    
+    private func reloadAndHide() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            Loader.hide()
         }
     }
 }

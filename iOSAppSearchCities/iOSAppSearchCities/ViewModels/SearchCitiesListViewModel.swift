@@ -15,13 +15,13 @@ enum HomeScreenViewModelError: Error {
 
 class SearchCitiesListViewModel {
     private var searchKeyword: String = ""
-    private let service: ServiceType
+    private let serachUC: SearchUsecase
     private let fetchingLocationDebounceTime = 0.4
     private var searchFn: ((String) -> Future<(String, Cities)>)?
     private var searchedResponse: Cities?
     
-    init(service: ServiceType = Service(indexes: Indexes(for: FACache.citiesIndexesKey))) {
-        self.service = service
+    init(serachUC: SearchUsecase = SearchUsecase(service: Service(indexes: Indexes(for: FACache.citiesIndexesKey)))) {
+        self.serachUC = serachUC
         
         self.setup()
     }
@@ -73,6 +73,6 @@ class SearchCitiesListViewModel {
     }
     
     private func setup() {
-       self.searchFn = OperationQueue.debounce(delay: fetchingLocationDebounceTime, action: { self.service.searchCities(for: $0) })
+        self.searchFn = OperationQueue.debounce(delay: fetchingLocationDebounceTime, action: { self.serachUC.search(byKeyword: $0) })
     }
 }

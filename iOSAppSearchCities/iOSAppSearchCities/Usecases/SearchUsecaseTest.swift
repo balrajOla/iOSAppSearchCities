@@ -15,7 +15,7 @@ class SearchUsecaseTest: XCTestCase {
         _ = IndexingUsecase.sharedInstance.indexing()
     }
 
-    func test_SearchForKey() {
+    func test_SearchUsecase_SearchForKeyword() {
         sleep(5)  // This sleep is to provide some head start for indexing to kick in with some data
         
         let sut = SearchUsecase(service: Service(indexes: Indexes(for: FACache.citiesIndexesKey)))

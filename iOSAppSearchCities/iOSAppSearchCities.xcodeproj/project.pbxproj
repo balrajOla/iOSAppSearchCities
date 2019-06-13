@@ -39,6 +39,7 @@
 		A21A730822B125320092A9CD /* AboutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A730722B125320092A9CD /* AboutModel.swift */; };
 		A21A730A22B1255E0092A9CD /* AboutInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A730922B1255E0092A9CD /* AboutInfo.swift */; };
 		A21A730C22B125930092A9CD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A730B22B125930092A9CD /* AboutViewController.swift */; };
+		A21A731022B22C1D0092A9CD /* AboutModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A730F22B22C1D0092A9CD /* AboutModelTest.swift */; };
 		A277E65522AEA1AC008B0A2D /* SearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */; };
 		A2CB1EBD22AD5173000FAB15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */; };
 		A2CB1EC422AD5176000FAB15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2CB1EC322AD5176000FAB15 /* Assets.xcassets */; };
@@ -98,6 +99,7 @@
 		A21A730722B125320092A9CD /* AboutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModel.swift; sourceTree = "<group>"; };
 		A21A730922B1255E0092A9CD /* AboutInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInfo.swift; sourceTree = "<group>"; };
 		A21A730B22B125930092A9CD /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		A21A730F22B22C1D0092A9CD /* AboutModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModelTest.swift; sourceTree = "<group>"; };
 		A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecase.swift; sourceTree = "<group>"; };
 		A2CB1EB922AD5173000FAB15 /* iOSAppSearchCities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSAppSearchCities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				A2CB1ED622AD6EF5000FAB15 /* CitiesDetail.swift */,
 				A21A730722B125320092A9CD /* AboutModel.swift */,
 				A21A730922B1255E0092A9CD /* AboutInfo.swift */,
+				A21A730F22B22C1D0092A9CD /* AboutModelTest.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21A731022B22C1D0092A9CD /* AboutModelTest.swift in Sources */,
 				A200867022AFC9D600BE1C6C /* iOSAppSearchCitiesTests.swift in Sources */,
 				A200867A22AFCA2100BE1C6C /* SearchUsecaseTest.swift in Sources */,
 			);

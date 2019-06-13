@@ -14,10 +14,10 @@ class AboutModelTest: XCTestCase {
     func test_AboutModel_PresenterSuccessInfoLoadedCalled() {
         let mockPresenter = MockPresenter()
         
-        let aboutModel = Model()
-        aboutModel.aboutInfo = self.getMockAboutInfo()
+        let sut = Model()
+        sut.aboutInfo = self.getMockAboutInfo()
         
-        aboutModel.loadAboutInfo(with: mockPresenter)
+        sut.loadAboutInfo(with: mockPresenter)
         
         let expectation = self.expectation(description: "aboutInfoDidCalled")
         DispatchQueue.main.async {
@@ -31,9 +31,9 @@ class AboutModelTest: XCTestCase {
     func test_AboutModel_PresenterFailureToLoadAboutInfoCalled() {
         let mockPresenter = MockPresenter()
         
-        let aboutModel = Model()
+        let sut = Model()
         
-        aboutModel.loadAboutInfo(with: mockPresenter)
+        sut.loadAboutInfo(with: mockPresenter)
         
         XCTAssert(mockPresenter.aboutInfoDidFailLoadingCalled, "AboutInfoDidFailLoading should be called successfully")
     }

@@ -14,7 +14,6 @@ protocol IndexingUsecaseProtocol {
 
 class IndexingUsecase {
     private let service: ServiceType
-    private let indexes: Indexes
     private let serialQueue = DispatchQueue(label: "InsuranceUsecaseQueue")
    
     private var isIndexing: Future<Bool> = Future<Bool>()
@@ -23,10 +22,8 @@ class IndexingUsecase {
     
     public static let sharedInstance = IndexingUsecase(service: Service())
     
-    private init(service: ServiceType,
-         indexes: Indexes = Indexes(for: FACache.citiesIndexesKey)) {
+    private init(service: ServiceType) {
         self.service = service
-        self.indexes = indexes
         
         self.isIndexing = self.generateIndexes()
     }

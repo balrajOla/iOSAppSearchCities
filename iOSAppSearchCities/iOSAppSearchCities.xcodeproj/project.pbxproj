@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A200866822AFAC5F00BE1C6C /* IndexManagerUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200866722AFAC5F00BE1C6C /* IndexManagerUsecase.swift */; };
-		A200867022AFC9D600BE1C6C /* iOSAppSearchCitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200866F22AFC9D600BE1C6C /* iOSAppSearchCitiesTests.swift */; };
 		A200867A22AFCA2100BE1C6C /* SearchUsecaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200867922AFCA2100BE1C6C /* SearchUsecaseTest.swift */; };
 		A214262222AD8235006D8FD1 /* Indexes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262122AD8235006D8FD1 /* Indexes.swift */; };
 		A214262422AD885F006D8FD1 /* Dictionary+KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262322AD885F006D8FD1 /* Dictionary+KeyPath.swift */; };
@@ -41,7 +40,6 @@
 		A21A730C22B125930092A9CD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A730B22B125930092A9CD /* AboutViewController.swift */; };
 		A21A731022B22C1D0092A9CD /* AboutModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A730F22B22C1D0092A9CD /* AboutModelTest.swift */; };
 		A21A731222B2351A0092A9CD /* AboutPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A731122B2351A0092A9CD /* AboutPresenterTest.swift */; };
-		A21A731A22B246C70092A9CD /* iOSAppSearchCitiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A731922B246C70092A9CD /* iOSAppSearchCitiesUITests.swift */; };
 		A277E65522AEA1AC008B0A2D /* SearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */; };
 		A2CB1EBD22AD5173000FAB15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */; };
 		A2CB1EC422AD5176000FAB15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2CB1EC322AD5176000FAB15 /* Assets.xcassets */; };
@@ -76,7 +74,6 @@
 /* Begin PBXFileReference section */
 		A200866722AFAC5F00BE1C6C /* IndexManagerUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexManagerUsecase.swift; sourceTree = "<group>"; };
 		A200866D22AFC9D600BE1C6C /* iOSAppSearchCitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSAppSearchCitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A200866F22AFC9D600BE1C6C /* iOSAppSearchCitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSAppSearchCitiesTests.swift; sourceTree = "<group>"; };
 		A200867122AFC9D600BE1C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A200867922AFCA2100BE1C6C /* SearchUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecaseTest.swift; sourceTree = "<group>"; };
 		A214262122AD8235006D8FD1 /* Indexes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indexes.swift; sourceTree = "<group>"; };
@@ -111,7 +108,6 @@
 		A21A730F22B22C1D0092A9CD /* AboutModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModelTest.swift; sourceTree = "<group>"; };
 		A21A731122B2351A0092A9CD /* AboutPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenterTest.swift; sourceTree = "<group>"; };
 		A21A731722B246C70092A9CD /* iOSAppSearchCitiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSAppSearchCitiesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A21A731922B246C70092A9CD /* iOSAppSearchCitiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSAppSearchCitiesUITests.swift; sourceTree = "<group>"; };
 		A21A731B22B246C70092A9CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecase.swift; sourceTree = "<group>"; };
 		A2CB1EB922AD5173000FAB15 /* iOSAppSearchCities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSAppSearchCities.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,7 +154,6 @@
 		A200866E22AFC9D600BE1C6C /* iOSAppSearchCitiesTests */ = {
 			isa = PBXGroup;
 			children = (
-				A200866F22AFC9D600BE1C6C /* iOSAppSearchCitiesTests.swift */,
 				A200867122AFC9D600BE1C6C /* Info.plist */,
 			);
 			path = iOSAppSearchCitiesTests;
@@ -194,7 +189,6 @@
 		A21A731822B246C70092A9CD /* iOSAppSearchCitiesUITests */ = {
 			isa = PBXGroup;
 			children = (
-				A21A731922B246C70092A9CD /* iOSAppSearchCitiesUITests.swift */,
 				A21A731B22B246C70092A9CD /* Info.plist */,
 			);
 			path = iOSAppSearchCitiesUITests;
@@ -478,7 +472,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A21A731022B22C1D0092A9CD /* AboutModelTest.swift in Sources */,
-				A200867022AFC9D600BE1C6C /* iOSAppSearchCitiesTests.swift in Sources */,
 				A21A731222B2351A0092A9CD /* AboutPresenterTest.swift in Sources */,
 				A200867A22AFCA2100BE1C6C /* SearchUsecaseTest.swift in Sources */,
 			);
@@ -488,7 +481,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A21A731A22B246C70092A9CD /* iOSAppSearchCitiesUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

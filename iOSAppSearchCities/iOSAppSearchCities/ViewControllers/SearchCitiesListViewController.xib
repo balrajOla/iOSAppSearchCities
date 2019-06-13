@@ -42,6 +42,9 @@
                                 <constraint firstAttribute="height" constant="60" id="Jot-lX-JxX"/>
                             </constraints>
                             <textInputTraits key="textInputTraits"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="search_keyword"/>
+                            </userDefinedRuntimeAttributes>
                         </searchBar>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Ct-zU-81J">
                             <rect key="frame" x="0.0" y="94" width="414" height="724"/>

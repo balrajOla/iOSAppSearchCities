@@ -40,6 +40,7 @@
 		A21A730C22B125930092A9CD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A730B22B125930092A9CD /* AboutViewController.swift */; };
 		A21A731022B22C1D0092A9CD /* AboutModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A730F22B22C1D0092A9CD /* AboutModelTest.swift */; };
 		A21A731222B2351A0092A9CD /* AboutPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A731122B2351A0092A9CD /* AboutPresenterTest.swift */; };
+		A21A732322B24A490092A9CD /* AboutViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A732222B24A490092A9CD /* AboutViewUITest.swift */; };
 		A277E65522AEA1AC008B0A2D /* SearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */; };
 		A2CB1EBD22AD5173000FAB15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */; };
 		A2CB1EC422AD5176000FAB15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2CB1EC322AD5176000FAB15 /* Assets.xcassets */; };
@@ -109,6 +110,8 @@
 		A21A731122B2351A0092A9CD /* AboutPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenterTest.swift; sourceTree = "<group>"; };
 		A21A731722B246C70092A9CD /* iOSAppSearchCitiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSAppSearchCitiesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21A731B22B246C70092A9CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A21A732122B24A480092A9CD /* iOSAppSearchCitiesUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSAppSearchCitiesUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		A21A732222B24A490092A9CD /* AboutViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewUITest.swift; sourceTree = "<group>"; };
 		A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecase.swift; sourceTree = "<group>"; };
 		A2CB1EB922AD5173000FAB15 /* iOSAppSearchCities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSAppSearchCities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -245,6 +248,8 @@
 				A21A72FD22B1143C0092A9CD /* NothingSelectedViewController.swift */,
 				A21A72FE22B1143C0092A9CD /* NothingSelectedViewController.xib */,
 				A21A730B22B125930092A9CD /* AboutViewController.swift */,
+				A21A732222B24A490092A9CD /* AboutViewUITest.swift */,
+				A21A732122B24A480092A9CD /* iOSAppSearchCitiesUITests-Bridging-Header.h */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -409,6 +414,7 @@
 					};
 					A21A731622B246C70092A9CD = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = A2CB1EB822AD5172000FAB15;
 					};
 					A2CB1EB822AD5172000FAB15 = {
@@ -481,6 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21A732322B24A490092A9CD /* AboutViewUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +592,7 @@
 		A21A731F22B246C70092A9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 998QCUR89P;
 				INFOPLIST_FILE = iOSAppSearchCitiesUITests/Info.plist;
@@ -595,6 +603,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Balraj.iOSAppSearchCitiesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSAppSearchCities/ViewControllers/iOSAppSearchCitiesUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = iOSAppSearchCities;
@@ -604,6 +614,7 @@
 		A21A732022B246C70092A9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 998QCUR89P;
 				INFOPLIST_FILE = iOSAppSearchCitiesUITests/Info.plist;
@@ -614,6 +625,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Balraj.iOSAppSearchCitiesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSAppSearchCities/ViewControllers/iOSAppSearchCitiesUITests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = iOSAppSearchCities;

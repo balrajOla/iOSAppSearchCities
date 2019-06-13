@@ -12,14 +12,42 @@ protocol SearchUsecaseProtocol {
     func search(byKeyword keyword: String) -> Future<(String, Cities)>
 }
 
+enum SearchUsecaseError: Error {
+    case noData
+}
+
 struct SearchUsecase: SearchUsecaseProtocol {
-    let service: ServiceType
-   
+    
+    private let fetchingLocationDebounceTime = 0.4
+    private var searchFn: ((String) -> Future<(String, Cities)>)?
+    
     init(service: ServiceType) {
-        self.service = service
+        self.setup(forService: service)
     }
     
     func search(byKeyword keyword: String) -> Future<(String, Cities)> {
-        return self.service.searchCities(for: keyword)
+        let response = Future<(String, Cities)>()
+        
+        self.searchFn?(keyword)
+            .observe {
+                switch $0 {
+                case .success(let value):
+                    if value.1.info.count > 0 {
+                        response.resolve(with: value)
+                    } else {
+                        response.reject(with: SearchUsecaseError.noData)
+                    }
+                case .failure(_ ):
+                    response.reject(with: SearchUsecaseError.noData)
+                }
+        }
+        
+        return response
+    }
+    
+    private mutating func setup(forService service: ServiceType) {
+        self.searchFn = OperationQueue.debounce(delay: fetchingLocationDebounceTime, action: {
+            service.searchCities(for: $0)
+        })
     }
 }

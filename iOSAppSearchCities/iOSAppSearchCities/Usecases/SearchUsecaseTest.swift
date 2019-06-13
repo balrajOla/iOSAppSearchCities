@@ -16,7 +16,7 @@ class SearchUsecaseTest: XCTestCase {
     }
 
     func test_SearchForKey() {
-        sleep(10)  // This sleep is to provide some head start for indexing to kick in with some data
+        sleep(5)  // This sleep is to provide some head start for indexing to kick in with some data
         
         let sut = SearchUsecase(service: Service(indexes: Indexes(for: FACache.citiesIndexesKey)))
         let testData = self.searchTestData()
@@ -33,7 +33,7 @@ class SearchUsecaseTest: XCTestCase {
                     case .success(let value):
                         searchResult.append((key.0, value.1.info.first?.detail.name.lowercased() ?? ""))
                     case .failure(_ ):
-                        break
+                         searchResult.append((key.0, ""))
                     }
                     
                     totalResponsesRecieved = totalResponsesRecieved + 1
@@ -42,6 +42,8 @@ class SearchUsecaseTest: XCTestCase {
                         expectation.fulfill()
                     }
             }
+            
+            sleep(1) // This to handle debounce scenario
         }
         
         wait(for: [expectation], timeout: 60)

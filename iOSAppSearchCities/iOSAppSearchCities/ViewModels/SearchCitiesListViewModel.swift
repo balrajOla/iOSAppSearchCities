@@ -16,33 +16,23 @@ enum HomeScreenViewModelError: Error {
 class SearchCitiesListViewModel {
     private var searchKeyword: String = ""
     private let serachUC: SearchUsecase
-    private let fetchingLocationDebounceTime = 0.4
-    private var searchFn: ((String) -> Future<(String, Cities)>)?
     private var searchedResponse: Cities?
     
     init(serachUC: SearchUsecase = SearchUsecase(service: Service(indexes: Indexes(for: FACache.citiesIndexesKey)))) {
         self.serachUC = serachUC
-        
-        self.setup()
     }
     
     func search(forKeyword keyword: String) -> Future<Bool> {
         self.searchKeyword = keyword
         let response = Future<Bool>()
         
-        self.searchFn?(self.searchKeyword)
+        self.serachUC.search(byKeyword: self.searchKeyword)
             .observe {
                 switch $0 {
                 case .success(let value):
                     if self.searchKeyword == value.0 {
                         self.searchedResponse = value.1
-                        
-                        if value.1.info.count > 0 {
-                            response.resolve(with: true)
-                        } else {
-                            response.reject(with: HomeScreenViewModelError.noData)
-                        }
-                        
+                        response.resolve(with: true)
                     } else {
                         response.reject(with: HomeScreenViewModelError.oldRequest)
                     }
@@ -70,9 +60,5 @@ class SearchCitiesListViewModel {
     
     public func getCityDetail(forIndex index: Int) -> City? {
         return self.searchedResponse?.info[index]
-    }
-    
-    private func setup() {
-        self.searchFn = OperationQueue.debounce(delay: fetchingLocationDebounceTime, action: { self.serachUC.search(byKeyword: $0) })
     }
 }

@@ -18,9 +18,7 @@
 		A214263922ADF686006D8FD1 /* UICollectionView+RegisterCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262D22ADF686006D8FD1 /* UICollectionView+RegisterCells.swift */; };
 		A214263A22ADF686006D8FD1 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214262E22ADF686006D8FD1 /* Environment.swift */; };
 		A214263C22ADF686006D8FD1 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214263022ADF686006D8FD1 /* Loader.swift */; };
-		A214263D22ADF686006D8FD1 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214263122ADF686006D8FD1 /* Operators.swift */; };
 		A214263E22ADF686006D8FD1 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214263222ADF686006D8FD1 /* AppEnvironment.swift */; };
-		A214263F22ADF686006D8FD1 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214263322ADF686006D8FD1 /* ErrorHandler.swift */; };
 		A214264022ADF686006D8FD1 /* FACache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214263422ADF686006D8FD1 /* FACache.swift */; };
 		A214264222AE2283006D8FD1 /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214264122AE2283006D8FD1 /* StorageHelper.swift */; };
 		A214264522AE2C20006D8FD1 /* IndexingUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A214264422AE2C20006D8FD1 /* IndexingUsecase.swift */; };
@@ -86,9 +84,7 @@
 		A214262D22ADF686006D8FD1 /* UICollectionView+RegisterCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+RegisterCells.swift"; sourceTree = "<group>"; };
 		A214262E22ADF686006D8FD1 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		A214263022ADF686006D8FD1 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
-		A214263122ADF686006D8FD1 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		A214263222ADF686006D8FD1 /* AppEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
-		A214263322ADF686006D8FD1 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		A214263422ADF686006D8FD1 /* FACache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FACache.swift; sourceTree = "<group>"; };
 		A214264122AE2283006D8FD1 /* StorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
 		A214264422AE2C20006D8FD1 /* IndexingUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexingUsecase.swift; sourceTree = "<group>"; };
@@ -260,10 +256,8 @@
 				A214263222ADF686006D8FD1 /* AppEnvironment.swift */,
 				A214262922ADF686006D8FD1 /* DateProtocol.swift */,
 				A214262E22ADF686006D8FD1 /* Environment.swift */,
-				A214263322ADF686006D8FD1 /* ErrorHandler.swift */,
 				A214263422ADF686006D8FD1 /* FACache.swift */,
 				A214263022ADF686006D8FD1 /* Loader.swift */,
-				A214263122ADF686006D8FD1 /* Operators.swift */,
 				A214262C22ADF686006D8FD1 /* PulseAnimation.swift */,
 				A214262D22ADF686006D8FD1 /* UICollectionView+RegisterCells.swift */,
 				A2CB1EDE22AD7955000FAB15 /* Future.swift */,
@@ -525,9 +519,7 @@
 				A21A730822B125320092A9CD /* AboutModel.swift in Sources */,
 				A214263522ADF686006D8FD1 /* DateProtocol.swift in Sources */,
 				A214264222AE2283006D8FD1 /* StorageHelper.swift in Sources */,
-				A214263F22ADF686006D8FD1 /* ErrorHandler.swift in Sources */,
 				A214263922ADF686006D8FD1 /* UICollectionView+RegisterCells.swift in Sources */,
-				A214263D22ADF686006D8FD1 /* Operators.swift in Sources */,
 				A214264522AE2C20006D8FD1 /* IndexingUsecase.swift in Sources */,
 				A2EE2C0022B010AA00B60533 /* SearchCitiesListViewController+TableviewDelegate+DataSource.swift in Sources */,
 			);

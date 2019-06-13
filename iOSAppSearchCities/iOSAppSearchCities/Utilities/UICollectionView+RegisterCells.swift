@@ -8,19 +8,6 @@
 
 import UIKit
 
-extension UICollectionView {
-  
-  public func register<T>(_ anyClass : T.Type, bundle : Bundle) -> Void where T : UICollectionViewCell {
-    self.register(UINib(nibName: String.stringFromClass(anyClass), bundle: bundle), forCellWithReuseIdentifier: String.stringFromClass(anyClass))
-  }
-  
-  public func registerCells<T>(_ cells : [T.Type], bundle : Bundle) -> Void where T : UICollectionViewCell {
-    for cellClass in cells {
-      self.register(cellClass, bundle : bundle)
-    }
-  }
-}
-
 extension UITableView {
   
   public func register<T>(_ anyClass : T.Type, bundle : Bundle) -> Void where T : UITableViewCell {

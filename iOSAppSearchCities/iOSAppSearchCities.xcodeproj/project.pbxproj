@@ -41,6 +41,7 @@
 		A21A730C22B125930092A9CD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A730B22B125930092A9CD /* AboutViewController.swift */; };
 		A21A731022B22C1D0092A9CD /* AboutModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A730F22B22C1D0092A9CD /* AboutModelTest.swift */; };
 		A21A731222B2351A0092A9CD /* AboutPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A731122B2351A0092A9CD /* AboutPresenterTest.swift */; };
+		A21A731A22B246C70092A9CD /* iOSAppSearchCitiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A731922B246C70092A9CD /* iOSAppSearchCitiesUITests.swift */; };
 		A277E65522AEA1AC008B0A2D /* SearchUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */; };
 		A2CB1EBD22AD5173000FAB15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */; };
 		A2CB1EC422AD5176000FAB15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2CB1EC322AD5176000FAB15 /* Assets.xcassets */; };
@@ -57,6 +58,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		A200867222AFC9D600BE1C6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2CB1EB122AD5172000FAB15 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2CB1EB822AD5172000FAB15;
+			remoteInfo = iOSAppSearchCities;
+		};
+		A21A731C22B246C70092A9CD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A2CB1EB122AD5172000FAB15 /* Project object */;
 			proxyType = 1;
@@ -102,6 +110,9 @@
 		A21A730B22B125930092A9CD /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		A21A730F22B22C1D0092A9CD /* AboutModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModelTest.swift; sourceTree = "<group>"; };
 		A21A731122B2351A0092A9CD /* AboutPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenterTest.swift; sourceTree = "<group>"; };
+		A21A731722B246C70092A9CD /* iOSAppSearchCitiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSAppSearchCitiesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A21A731922B246C70092A9CD /* iOSAppSearchCitiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSAppSearchCitiesUITests.swift; sourceTree = "<group>"; };
+		A21A731B22B246C70092A9CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A277E65422AEA1AC008B0A2D /* SearchUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsecase.swift; sourceTree = "<group>"; };
 		A2CB1EB922AD5173000FAB15 /* iOSAppSearchCities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSAppSearchCities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CB1EBC22AD5173000FAB15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +131,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		A200866A22AFC9D600BE1C6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A21A731422B246C70092A9CD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -173,11 +191,21 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		A21A731822B246C70092A9CD /* iOSAppSearchCitiesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A21A731922B246C70092A9CD /* iOSAppSearchCitiesUITests.swift */,
+				A21A731B22B246C70092A9CD /* Info.plist */,
+			);
+			path = iOSAppSearchCitiesUITests;
+			sourceTree = "<group>";
+		};
 		A2CB1EB022AD5172000FAB15 = {
 			isa = PBXGroup;
 			children = (
 				A2CB1EBB22AD5173000FAB15 /* iOSAppSearchCities */,
 				A200866E22AFC9D600BE1C6C /* iOSAppSearchCitiesTests */,
+				A21A731822B246C70092A9CD /* iOSAppSearchCitiesUITests */,
 				A2CB1EBA22AD5173000FAB15 /* Products */,
 				A21A72F222B0CB3E0092A9CD /* Frameworks */,
 			);
@@ -188,6 +216,7 @@
 			children = (
 				A2CB1EB922AD5173000FAB15 /* iOSAppSearchCities.app */,
 				A200866D22AFC9D600BE1C6C /* iOSAppSearchCitiesTests.xctest */,
+				A21A731722B246C70092A9CD /* iOSAppSearchCitiesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -335,6 +364,24 @@
 			productReference = A200866D22AFC9D600BE1C6C /* iOSAppSearchCitiesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A21A731622B246C70092A9CD /* iOSAppSearchCitiesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A21A731E22B246C70092A9CD /* Build configuration list for PBXNativeTarget "iOSAppSearchCitiesUITests" */;
+			buildPhases = (
+				A21A731322B246C70092A9CD /* Sources */,
+				A21A731422B246C70092A9CD /* Frameworks */,
+				A21A731522B246C70092A9CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A21A731D22B246C70092A9CD /* PBXTargetDependency */,
+			);
+			name = iOSAppSearchCitiesUITests;
+			productName = iOSAppSearchCitiesUITests;
+			productReference = A21A731722B246C70092A9CD /* iOSAppSearchCitiesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		A2CB1EB822AD5172000FAB15 /* iOSAppSearchCities */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2CB1ECB22AD5176000FAB15 /* Build configuration list for PBXNativeTarget "iOSAppSearchCities" */;
@@ -366,6 +413,10 @@
 						CreatedOnToolsVersion = 10.2.1;
 						TestTargetID = A2CB1EB822AD5172000FAB15;
 					};
+					A21A731622B246C70092A9CD = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = A2CB1EB822AD5172000FAB15;
+					};
 					A2CB1EB822AD5172000FAB15 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -386,12 +437,20 @@
 			targets = (
 				A2CB1EB822AD5172000FAB15 /* iOSAppSearchCities */,
 				A200866C22AFC9D600BE1C6C /* iOSAppSearchCitiesTests */,
+				A21A731622B246C70092A9CD /* iOSAppSearchCitiesUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A200866B22AFC9D600BE1C6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A21A731522B246C70092A9CD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -422,6 +481,14 @@
 				A200867022AFC9D600BE1C6C /* iOSAppSearchCitiesTests.swift in Sources */,
 				A21A731222B2351A0092A9CD /* AboutPresenterTest.swift in Sources */,
 				A200867A22AFCA2100BE1C6C /* SearchUsecaseTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A21A731322B246C70092A9CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A21A731A22B246C70092A9CD /* iOSAppSearchCitiesUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +542,11 @@
 			target = A2CB1EB822AD5172000FAB15 /* iOSAppSearchCities */;
 			targetProxy = A200867222AFC9D600BE1C6C /* PBXContainerItemProxy */;
 		};
+		A21A731D22B246C70092A9CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A2CB1EB822AD5172000FAB15 /* iOSAppSearchCities */;
+			targetProxy = A21A731C22B246C70092A9CD /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -515,6 +587,44 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSAppSearchCities.app/iOSAppSearchCities";
+			};
+			name = Release;
+		};
+		A21A731F22B246C70092A9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 998QCUR89P;
+				INFOPLIST_FILE = iOSAppSearchCitiesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Balraj.iOSAppSearchCitiesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iOSAppSearchCities;
+			};
+			name = Debug;
+		};
+		A21A732022B246C70092A9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 998QCUR89P;
+				INFOPLIST_FILE = iOSAppSearchCitiesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Balraj.iOSAppSearchCitiesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iOSAppSearchCities;
 			};
 			name = Release;
 		};
@@ -680,6 +790,15 @@
 			buildConfigurations = (
 				A200867522AFC9D600BE1C6C /* Debug */,
 				A200867622AFC9D600BE1C6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A21A731E22B246C70092A9CD /* Build configuration list for PBXNativeTarget "iOSAppSearchCitiesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A21A731F22B246C70092A9CD /* Debug */,
+				A21A732022B246C70092A9CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

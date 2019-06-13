@@ -38,6 +38,16 @@
                ReferencedContainer = "container:iOSAppSearchCities.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A21A731622B246C70092A9CD"
+               BuildableName = "iOSAppSearchCitiesUITests.xctest"
+               BlueprintName = "iOSAppSearchCitiesUITests"
+               ReferencedContainer = "container:iOSAppSearchCities.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
